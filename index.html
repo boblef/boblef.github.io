@@ -129,7 +129,8 @@
         </div>
         <p class="lead mb-5">Hi, I am <span class="marker">Kohei</span>. <br>I am a <span class="marker">Machine
             Learning Engineer</span> in the
-          Vancouver area with 6 months of working experience at Singular Software and<span class="marker"> am actively
+          Vancouver area with 6 months of working experience at Singular Software and<span class="marker text-primary">
+            am actively
             looking for a job as a Machine Learning Engineer in the Vancouver
             area.</span><br>I
           have spent a lot of time to fill computer science knowledge, especially in machine learning by doing
@@ -402,19 +403,166 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-sm-12 mb-2">
-            <div class="card" style="text-align: center;">
-              <div class="card-body">
+          <div class="col-sm-12 mb-2">
+            <div class="card">
+              <div class=" card-body">
                 <div class="resume-date text-md-right">
-                  <span class="text-primary">Jan 2019 - Jun 2019</span>
+                  <span class="text-primary">Aug 2019 - Sep 2019</span>
                 </div>
-                <h5 class="card-title">RLFXer</h5>
-                <p class="card-text">MOST research project: Improving Foreign Exchange Trading Strategies via
-                  Reinforcement Learning</p>
-                <a href="https://rainboltz.github.io/rlfxer/" class="btn btn-light" target="_blank">Result</a>
+                <h3 class="card-title">Ticket-Dodger<a href="https://ticket-dodger.com/"
+                    target="_blank">&ensp;[link]</a></h3>
+                <p class="card-text">This is the final team project in Machine Learning Bootcamp at 7 Gate Academy and
+                  is <span class="marker">an application predicting the likelihood of getting a parking ticket</span> in
+                  the Vancouver area based on
+                  the user's geolocation and the time. When a user taps a location at where he is planning to park his
+                  car or at where he is currently parking his car, that is going to be a trigger to call <span
+                    class="marker">AWS Lambda</span>
+                  where our machine learning model runs to predict the likelihood.<br><br>
+
+                  Here is how I and <a href="https://www.linkedin.com/in/parampaulnahal/">Paul</a> had <span
+                    class="marker">created</span> this application <span class="marker">within a month</span>.
+                  <img src="img/app_development_ticket_dodger.png" class="img-fluid" alt="Responsive image"><br>
+                  We found dataset on <a href="https://data.vancouver.ca/datacatalogue/index.htm"
+                    target="_blank">Vancouver open data catalog</a>, the original dataset had the information of parking
+                  tickets issued such as date time, address including block, infraction, status, etc.
+                  However the dataset obviously <span class="marker">did not have any target variable that we could
+                    use</span> in our case the likelihood or probability
+                  of getting a parking ticket. I will <span class="marker">explain how we solve this problem in
+                    Obstacles section</span>
+                  below but the <span class="marker">simple answer is that we created by using traffic counts</span> on
+                  each
+                  street.<br>
+                  We <span class="marker">estimated the probability</span> for each street and thresholded them to
+                  create three categories, <span class="marker">Low</span>,
+                  <span class="marker">Medium</span>, and <span class="marker">High</span> that were the likelihood we
+                  were predicting.
+                  So we <span class="marker">dealt with this problem as a classification problem</span> because it was
+                  more user-friendly than
+                  giving users a probability.
+                  <br>
+
+                  <h5>EDA</h5>
+                  While we were working on feature engineering we found that <span class="marker">the time was
+                    definetely a factor</span>.
+                  As you can see below, there is high chances for getting a ticket around 3 PM.<br>
+                  <div class="row">
+                    <div class="column">
+                      <img src="img/image1.gif" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="column">
+                      <img src="img/td_time2.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                  </div>
+                  <h5>Training Machine Learning Models</h5>
+                  As I mentioned, this was a classification problem so we started from training a <span
+                    class="marker">simple logistic
+                    regresssion</span> because it was easy to implement.<br>
+                  Afterwords, we trained different kind of models such as <span class="marker">Random Forest</span>,
+                  <span class="marker">XGBoost</span>, and <span class="marker">Neural Networks</span>.
+                  At first we made sure that there was a capacity for models to learn something from our data by trying
+                  them to <span class="marker">overfit</span> on the training data.<br>
+                  Then we started <span class="marker">iteratively building more complecated models</span> by changing,
+                  for instance in <span class="marker">Multi Layer
+                    Perceptron (MLP)</span>, changing the number of
+                  neurons in each layer, the number of layers, optimizers, and so on.<br>
+                  Here is one of the results we got from MLP and XGBoost after <span class="marker">Hyperparameter
+                    search</span> by using <a href="https://github.com/maxpumperla/hyperas" target="_blank">Hyperas</a>
+                  and <a href="https://github.com/pfnet/optuna">Optuna</a> that are framework in Python for Hyper
+                  parameter search.
+                  <div class="row">
+                    <div class="column">
+                      <img src="img/td_training_curves.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="column">
+                      <img src="img/td_cm.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                  </div>
+                  <h5>Model Evaluation</h5>
+                  <span class="marker">Subjectively evaluating our models was difficult</span>. The best that we could
+                  say was that we did a pretty
+                  <span class="marker">good job of determining the low risk</span> of getting a ticket. It is much more
+                  <span class="marker">important for us to have accurate LOW risks</span>.
+                  For example, if you park expecting a low risk and you end up getting a ticket, it will be a much worse
+                  <span class="marker">user experience</span> than if you went in expecting a ticket and got none!
+                  <br><br>
+                  We did chase down a parking ticket enforcer and asked for his opinion and he gave us some streets that
+                  are common of getting a parking ticket. Our predictions from XGBoost were pretty good.
+                  <span class="marker">Due to model's performance and inference time, 28.19 [ms], we choose XGBoost
+                    model</span>.<br><br>
+                  <h5>Application Archtecture</h5>
+                  <strong>Backend</strong><br>
+                  &ensp;&ensp;- Server: Flask running behind Gunicorn, and NGinx<br>
+                  &ensp;&ensp;- Custom built location to street matching engine<br>
+                  &ensp;&ensp;- XGBoost<br>
+                  &ensp;&ensp;- Deployment: DigitalOcean Droplet<br>
+                  &ensp;&ensp;&ensp;&ensp;- 1 vCPU<br>
+                  &ensp;&ensp;&ensp;&ensp;- 1 GB RAM<br>
+                  &ensp;&ensp;&ensp;&ensp;- 24 GB SSD<br>
+                  &ensp;&ensp;&ensp;&ensp;- ($5 a month)<br>
+                  <strong>Client Side</strong><br>
+                  &ensp;&ensp;- Website: HTML and Javascript<br>
+                  &ensp;&ensp;- Map: LeafletJS serving OpenStreetMap (No google!)<br>
+                  &ensp;&ensp;- Deployment: Github Pages<br>
+                  &ensp;&ensp;&ensp;&ensp;- Free<br><br>
+                  <h5>How did we work as a team</h5><br>
+                  Since we lived a little bit far to work together in person, it was <span class="marker">important that
+                    we had a good system
+                    to work together</span>.<br>
+                  We started by working together by sourcing our data, evaluating what we have and creating a merged
+                  base dataset.<br>
+                  In order to streamline our approach, we then <span class="marker">split up our roles to focus on
+                    primary areas</span>, building
+                  machine learning models was my focus and Paul was working on development.<br>
+                  Afterwards, we <span class="marker">did a knowledge transfer</span> to fill each other on the gaps
+                  that we might have missed out
+                  on.<br><br>
+
+                  We did loosely<span class="marker"> work in the agile way</span>, changing things as we needed.
+                  We made sure we reviewed each others work to the standards that we set out for ourselves.
+                  To do so we used <span class="marker">Trello to manage our tasks</span>. Here are the some of the tags
+                  we had in our channel on
+                  Trello.<br>
+                  &ensp;&ensp;- Product backlog<br>
+                  &ensp;&ensp;- Current sprint<br>
+                  &ensp;&ensp;- Doing<br>
+                  &ensp;&ensp;- Review<br>
+                  &ensp;&ensp;- Blocked<br>
+                  &ensp;&ensp;- Done<br>
+                  &ensp;&ensp;&ensp;&ensp;- Nothing moves here unless it is reviewed by the other<br>
+
+                  We also has a daily meeting.<br><br>
+                  <h5>Obstacles</h5>
+                  -&ensp;&ensp;Target variable creation
+                  As I mentioned above, we did not have a target variable, the probability or the likelihood of getting
+                  a parking ticket.
+                  We <span class="marker">created one by using three datasets</span>, one that contained the information
+                  of parking tickets issued,
+                  second that had the traffic counts on each street including some private streets, and third that had
+                  almost all of the street name in the Vancouver area.<br>
+                  It was <span class="marker">important for us to define what we mean by “Risk".</span><br>
+                  It was a fairly arbitrary term.
+                  We had decided to use the number of tickets given, divided by the amount of traffic on the street.
+                  In this way, <span class="marker">we defined risk RELATIVE to the risk of other streets</span>.
+                  The formula for estimating the probability for each block on each street was as follows:<br><br>
+                  <div class="text-center">
+                    <a href="https://www.codecogs.com/eqnedit.php?latex=\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
+                      target="_blank"><img
+                        src="https://latex.codecogs.com/gif.latex?\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
+                        title="\textbf{The number of tickets / The number of traffic counts}" /></a>
+                  </div><br>
+
+                  In order to do the calculation, we needed to make sure that <span class="marker">each street</span> in
+                  the parking ticket dataset
+                  and traffic counts dataset were <span class="marker">the same format</span> to marge the two datasets
+                  with the streets as the key.<br>
+                  Here is an example of a street we needed to clean up: <span class="marker">"WEST GEORGIA"</span> and
+                  <span class="marker">"GEORGIA W"</span><br>
+                  So we used a Python framework, <a href="https://github.com/seatgeek/fuzzywuzzy"
+                    target="_blank">fuzzywazzy</a>, to clean up the streets name.
+                </p>
               </div>
             </div>
-          </div> -->
+          </div>
 
         </div>
       </div>
