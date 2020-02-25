@@ -370,15 +370,67 @@
                       <img src="img/price_movings_5sec.png" class="img-fluid" alt="Responsive image">
                     </div>
                   </div>
+                  <br>
+                  <br>
+                  -&ensp;&ensp;<span class="marker">DRL model always took STAY as an action after 600
+                    episodes</span>.&ensp;&ensp;&ensp;&ensp;<i>Updated: 2020/02/23</i><br>
+                  Here is the result of training DRL model for 900
+                  episodes.
+                  <img src="img/result_ep0_ep900_result100s.png" class="img-fluid" alt="Responsive image">
+                  The result shows basically three facts.<br>
+                  &ensp;&ensp;&ensp;&ensp;&ensp;- The more training goes the
+                  more trades happened.<br>
+                  &ensp;&ensp;&ensp;&ensp;&ensp;- The model's performance has
+                  been improved as training
+                  goes.<br>
+                  &ensp;&ensp;&ensp;&ensp;&ensp;<span class="marker">- DRL
+                    model always took STAY as an
+                    action</span>. <span class="marker">(Exploration problem)</span><br>
+                  <span class="marker">Firstly, I tuned up some parameters for exploration.</span><br>
+                  <span class="marker">In the original paper</span>, they had implemented only <span
+                    class="marker">BUY</span>
+                  and <span class="marker">SELL</span> for the order type but <span class="marker">STAY</span>.<br>After
+                  running the
+                  base model on live data that I implemented
+                  exactly the same as the one in the original paper, I figured out there were timings when it shouldn't
+                  have placed orders, instead, it should have just STAY.<br>
+                  So I had added STAY to the base in which DRL was able to take as
+                  an action.<br>
+                  But the reason why DRL took STAY after certain episodes could be
+                  that <span class="marker">the model might figure out that
+                    always taking STAY as an action would be a way to maximize the total reward</span>. Whatsmore it had
+                  stopped <span class="marker">exploring</span>.
+                  <br>
+                  <br>
+                  So I <span class="marker">defined a new reward function for STAY action</span> by using a kind
+                  of <span class="marker">Supervised approach</span>.<br>
+                  I defined where the DRL model should STAY and not. For example, if the
+                  price will move directly
+                  Take-Profit line directly in the next 10 minutes, it shouldn't stay.<br>
+                  The new reward function for STAY actions that shouldn't have STAY
+                  is as follows:<br><br>
+                  <div class="text-center">
+                    <a href="https://www.codecogs.com/eqnedit.php?latex=\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
+                      target="_blank"><img
+                        src="https://latex.codecogs.com/gif.latex?\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
+                        title="\textrm{Reward} = \sqrt{\frac{\textrm{Expected profit}}{\textrm{Base pip size}}}" /></a><br>
+                  </div><br>
+                  <hr>
+                  For example, if we buy $1 USD at 109.050 JPY. Then our target price
+                  could be, let's say, 109.080 JPY. So here
+                  we would want to get 3 pips. Expected profit would be calculated by (109.080 - 109.050). And the base
+                  pip size I use is 0.001 in USDJPY currency pair.
+                  So the reward would be 5.4772.
+                  <hr>
+                  <span class="marker">Otherwise, the reward would be 0</span>.<br><br>
 
-                  -&ensp;&ensp;I have not got any model that I can use for real trading to make profit. In order to
-                  build a better model, I have been spending time to think about the way to define the state and the
-                  reward function.<br><br>
+                  * Training result will be shown once it gets done.<br><br>
                   <h5>Worth to try</h5>
                   - Define a new state: The way I use to define state is that encoding Open, High, Low, Close by using
                   GAF and stack them up to create 4 channel image.
                   I believe that having technical indicators could help to improve model's performance.
-                  Here is my idea. Create 4 images whose size is (window size, window size, 4), then tiled them up as a
+                  Here is my idea. Create 4 images whose size is (window size, window size, 4), then tiled them up as
+                  a
                   new state.
                   <div class="row">
                     <div class="column">
