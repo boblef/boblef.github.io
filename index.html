@@ -323,7 +323,7 @@
                   from Oanda, which is a broker I use.<br><br>
                   <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                     <p class="mb-0 mt-2 font-italic">
-                      Here is <span class="marker">detailes of MVP</span> in a week. <span class="marker">Everything
+                      Here is <span class="marker">detailes of MVP</span>. <span class="marker">Everything
                         below is
                         automated</span>.<br>
                       - Every Monday after the Oceania market opens (at night on Sunday (GMT)), the server is booted. I
@@ -425,6 +425,55 @@
                   <span class="marker">Otherwise, the reward would be 0</span>.<br><br>
 
                   * Training result will be shown once it gets done.<br><br>
+
+                  <h5>Trying to Improve the DRL</h5>
+                  I have been trying to improve the DRL model by changing the archtecture of CNN and tuning
+                  hyperparameters for the PPO method.<br><br>
+                  - <span class="marker">Different CNN archtecture</span><br>
+                  The first archtecture I used was the same as one that the author used.
+                  For the sake of testing, I created a CNN model on Colab to see how well the archtecture can classify
+                  given images encoded by GAF into 2 categories, SHOULD STAY or not.
+                  Here are the results of the old version and new version.<br><br>
+                  <table width="100%" cellpadding="10" border="1">
+                    <tr>
+                      <th></th>
+                      <th>Old archtecture</th>
+                      <th>New archtecture</th>
+                    </tr>
+                    <tr>
+                      <td>Confusion matrics</td>
+                      <td><img src="img/old_cnn_archtecture.png" class="img-fluid" alt="Responsive image"></td>
+                      <td><img src="img/new_cnn_archtecture2.png" class="img-fluid" alt="Responsive image"></td>
+                    </tr>
+                    <tr>
+                      <td>Precision</td>
+                      <td>0.8805369127516779</td>
+                      <td><span class="marker">0.8877742946708463</span></td>
+                    </tr>
+                    <tr>
+                      <td>Recall</td>
+                      <td>0.8298545224541429</td>
+                      <td><span class="marker">0.8956356736242884</span></td>
+                    </tr>
+                    <tr>
+                      <td>F1</td>
+                      <td>0.8544448062520352</td>
+                      <td><span class="marker">0.8916876574307304</span></td>
+                    </tr>
+                  </table>
+                  <br>
+                  I added MaxPooling layers following Conv layers and changed the activation function to tanh from relu
+                  in Conv lasyers and a
+                  Dense layer.
+                  <br><br>
+                  - <span class="marker">Tuning hyperparameters</span><br>
+                  I have spent some time tuning hyperparameters. What I have found so far is that <span
+                    class="marker">the epsilon for action
+                    exploration parameter</span> is pretty important because there is a <span class="marker">concept of
+                    exploration and
+                    exploitation
+                    trade-off</span>.<br>
+                  <br>
                   <h5>Worth to try</h5>
                   - Define a new state: The way I use to define state is that encoding Open, High, Low, Close by using
                   GAF and stack them up to create 4 channel image.
