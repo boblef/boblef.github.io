@@ -376,7 +376,7 @@
                     episodes</span>.&ensp;&ensp;&ensp;&ensp;<i>Updated: 2020/02/23</i><br>
                   Here is the result of training DRL model for 900
                   episodes.
-                  <img src="img/result_ep0_ep900_result100s.png" class="img-fluid" alt="Responsive image">
+                  <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
                   The result shows basically three facts.<br>
                   &ensp;&ensp;&ensp;&ensp;&ensp;- The more training goes the
                   more trades happened.<br>
@@ -422,9 +422,19 @@
                   pip size I use is 0.001 in USDJPY currency pair.
                   So the reward would be 5.4772.
                   <hr>
-                  <span class="marker">Otherwise, the reward would be 0</span>.<br><br>
+                  <span class="marker">Otherwise, the reward would be 0</span>.<br>
 
-                  * Training result will be shown once it gets done.<br><br>
+                  <img src="img/result_ep0_ep1000_new_reward_exploration_window48.png" class="img-fluid"
+                    alt="Responsive image">
+                  This is the result of the training with the new reward function for STAY and updated
+                  hyperparameters.<br>
+                  As you can see, <span class="marker">successfully avoided the model taking the same actions</span>
+                  after certain episodes. But <span class="marker">the
+                    model's performance is not good</span> because <span class="marker">probably I set exploration
+                    parameter too high and the model did not try exploiting enough</span>.<br>
+                  I will talk about how to improve the model's performance in the next section, <span
+                    class="marker">"Trying to improve the
+                    DRL"</span>.<br><br>
 
                   <h5>Trying to Improve the DRL</h5>
                   I have been trying to improve the DRL model by changing the archtecture of CNN and tuning
