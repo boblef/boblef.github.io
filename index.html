@@ -246,6 +246,9 @@
                     repo</a>.
                   And I used <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images
                     (Pneumonia) dataset</a> for the samples of negative COVID-19.<br>
+                  <span class="marker">Each image was reshaped to (224, 224)</span> before being fed into the model
+                  whose archtecture is discussed
+                  down below.<br><br>
 
                   <strong>Train</strong>
 
@@ -289,11 +292,6 @@
                   </div>
 
                   <h5>Result</h5>
-                  <div class="column">
-                    <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
-                    <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
-                  </div>
-
                   As we can see here, it is <span class="marker">underfitting</span> on training data but the results on
                   test data I got were 1.0
                   for Recall, Precision, and F1 score.
@@ -301,6 +299,10 @@
                   <span class="marker">I can definitely say that the number of samples for test data is not enough,
                     however, I could get a
                     good result even small samples of training data with finetuning</span>.
+                  <div class="column">
+                    <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
+                    <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
+                  </div>
                 </p>
               </div>
             </div>
