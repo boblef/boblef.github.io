@@ -225,6 +225,89 @@
         <!-- <p>All project source codes can be found in my <a href="https://github.com/RainBoltz" target="_blank"><i
               class="fab fa-github"></i> GITHUB</a></p> -->
         <div class="row">
+          <!-- A project section start -->
+          <div class="col-sm-12 mb-2">
+            <div class="card">
+              <div class=" card-body">
+                <div class="resume-date text-md-right">
+                  <span class="text-primary">Mar 2020 - Mar 2020</span>
+                </div>
+                <h3 class="card-title">Detecting COVID-19 with CNN<a href="https://github.com/boblef/detect_COVID19"
+                    target="_blank">&ensp;[github]</a></h3>
+                <p class="card-text">
+                  <h5>Disclaimer</h5>
+
+                  COVID-19 detection is only for educational purposes that don't mean highly accurate COVID-19 diagnosis
+                  system.
+                  <br><br>
+                  <h5>Dataset</h5>
+
+                  Positive samples come from <a href="https://github.com/ieee8023/covid-chestxray-dataset">this
+                    repo</a>.
+                  And I used <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images
+                    (Pneumonia) dataset</a> for the samples of negative COVID-19.<br>
+
+                  <strong>Train</strong>
+
+                  - Positives: 67 images
+                  - Negatives: 67 images
+
+                  20% of training samples were used for the validation set.<br>
+                  <strong>Test</strong>
+
+                  - Positives: 6 images
+                  - Negatives: 6 images
+                  <br>
+                  <br>
+                  <div class="column">
+                    <i><strong>Positive samples</strong></i>
+                    <img src="img/positive_samples.png" class="img-fluid" alt="Responsive image">
+                    <i><strong>Negative samples</strong></i>
+                    <img src="img/negative_samples.png" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <br>
+
+                  <div class="column">
+
+                  </div>
+
+                  <p>As we can see here, the resolution and quality of images of each category are a bit different, but
+                    I just ignore that for the educational purpose. </p>
+
+                  <br>
+                  <h5>Model</h5>
+
+                  I grabbed <span class="marker">VGG16</span> and added some layers, Avg_Pool2D, 2 Dense layers, and
+                  Dropout
+                  between the dense
+                  layers.
+                  Then trained only layers added.<br>
+
+                  <strong>Added layers</strong>
+                  <div class="column">
+                    <img src="img/additional_layers.png" class="img-fluid" alt="Responsive image">
+                  </div>
+
+                  <h5>Result</h5>
+                  <div class="column">
+                    <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
+                    <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
+                  </div>
+
+                  As we can see here, it is <span class="marker">underfitting</span> on training data but the results on
+                  test data I got were 1.0
+                  for Recall, Precision, and F1 score.
+
+                  <span class="marker">I can definitely say that the number of samples for test data is not enough,
+                    however, I could get a
+                    good result even small samples of training data with finetuning</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- A Project section done-->
+          <p>&ensp;</p>
+          <!-- A project section start -->
           <div class="col-sm-12 mb-2">
             <div class="card">
               <!--<img class="card-img-top" src="img/profile.jpg" alt="loading...">-->
@@ -518,6 +601,11 @@
               </div>
             </div>
           </div>
+          <!-- A project section done -->
+
+          <p>&ensp;</p>
+
+          <!-- A project section start -->
           <div class="col-sm-12 mb-2">
             <div class="card">
               <div class=" card-body">
@@ -678,7 +766,7 @@
               </div>
             </div>
           </div>
-
+          <!-- A project section done -->
         </div>
       </div>
     </section>
@@ -793,6 +881,14 @@
         <ul class="fa-ul mb-5">
           <li>
             <p>
+              <div>
+                <div class="resume-date text-md-right">
+                  <span class="text-primary">Mar 2020 - No Expiration Date</span>
+                </div>
+                -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/P4KA5VXXY6CE"
+                  target="_blank"><span class="marker">Reinforcement Learning Specialization</span></a><br>
+                &ensp;&ensp;Organization: Coursera<br>
+              </div>
               <div>
                 <div class="resume-date text-md-right">
                   <span class="text-primary">Dec 2019 - No Expiration Date</span>
