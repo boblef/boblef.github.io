@@ -157,9 +157,8 @@
         &ensp;Python (TensorFlow, PyTroch, Pandas, Numpy, Matplotlib, Sklearn, Jupyter Notebook, Tensorforce, SCipy,
         Flask), C/C++, SQL, Java, Bash<br>
         - <span class="marker">Machine Learning</span>: Computer Vision, NLP, Time Series, Reinforcement Learning,
-        Classic machine learning
-        technics<br>
-        - <span class="marker">OS</span>: Ubuntu, OSX<br>
+        Classic machine learning<br>
+        - <span class="marker">OS</span>: Ubuntu, MacOS<br>
 
 
         - <span class="marker">Others</span>: AWS(EC2, DynamoDB, CloudWatch), Github, Algorithms and Data structures
@@ -183,848 +182,877 @@
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div class="w-100">
         <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Machine Learning Developer Internship</h3>
-            <div class="subheading mb-3">Singular Software Inc.&ensp;<a
-                href="docs/Reference_letter_for_Kohei Suzuki.pdf" target="_blank">[SEE
-                Reference from the CEO]</a></div>
-            <p><a href="https://www.linkedin.com/company/singular-software-inc-/about/" target="_blank">Singular
-                Software</a> has created a smartphone-based app, <a href="https://heardthatapp.com/"
-                target="_blank">HeardThat</a>, that
-              substantially improves the utility
-              of hearing aids
-              and other hearing assistive devices in noisy social situations.<br>The company was nominated for <span
-                class="marker">the top 10
-                companies</span> in <a href="https://www.newventuresbc.com/" target="_blank">New Ventures BC
-                2019</a>.<br>
-              I worked as a Machine Learning Developer Internship and involved in creating HeardThat app in the early
-              developing stage.
-            </p>
-            <p>My focus was <span class="marker">evaluation of deep learning models</span> that team members had
-              created.<br>I developed both internal and external platforms for the purpose of model evaluation.<br></p>
-            <p>The <span class="marker">external platform</span> is a place for Mechanical Turk where people can listen
-              to an audio file at a time
-              which is randomly chosen from some kind of file types such as ground truth, denoised, and mixed that has
-              conversation with noise.<br>Once people have listened to an audio, then they give it a score and type what
-              they just have heard that are stored into a database and that are used to calculate metrics. <br>We used
-              Flask for the backend and SQLite for the database.</p>
-            <p>One of the <span class="marker">internal platforms</span> was also created with Flask and was a place
-              where team members can see
-              waveform and spectrogram of any audio files that they were interested in. The coolest feature of that was
-              that we could also display waveform and spectrogram based on an arithmetic calculation between two audio
-              files we were interested in. For example, it could display the difference between a mixed file and
-              a denoised file as waveform and spectrogram so that we could compare them with ones of the ground truth.
-            </p>
-            <p>Creating platforms was not the only thing I had done. Another thing I did was calculating metrics of each
-              model such as <span class="marker">Mean Opinion Score (MOS)</span> and <span class="marker">Word Error
-                Rate (WER)</span> by using the given information that we
-              got from Mechanical Turk. I had created a Jupyter Notebook with widgets where team members can choose a
-              model in a dropdown menu to see its MOS and WER.</p>
-            <p>This internship was a remote work so we had a daily meeting on the call every day to catch up on what
-              everyone had done the day before and what things each member was working on. And we also used Trello to
-              manage our tasks.</p>
-            <p><span class="marker">Main technics</span> I used during this internship: Ubuntu, SSH, Anaconda,
-              Tensorflow, Numpy, Jupyter Notebook,
-              Scipy, Matplotlib, Seaborn, Flask, SQLite.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jan 2019 - Jun 2019</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
-      <div class="w-100">
-        <h2 class="mb-5">Projects</h2>
-        <!-- <p>All project source codes can be found in my <a href="https://github.com/RainBoltz" target="_blank"><i
-              class="fab fa-github"></i> GITHUB</a></p> -->
         <div class="row">
-          <!-- A project section start -->
-          <div class="col-sm-12 mb-2">
-            <div class="card">
-              <!--<img class="card-img-top" src="img/profile.jpg" alt="loading...">-->
-              <div class="card-body">
-                <div class="resume-date text-md-right">
-                  <span class="text-primary">Jan 2020 - Present</span>
-                </div>
-                <h3 class="card-title">Forex Trading System with Deep Reinforcement Learning</h3>
-                <p class="card-text">I loosely followed <a href="https://arxiv.org/pdf/1908.08036.pdf"
-                    target="_blank">this</a> paper,
-                  Deep Reinforcement Learning for Foreign
-                  Exchange Trading. What I mean by loosely is that I implemented their idea as the base and updated some
-                  things which I will explain in the Obstacles section.<br><br>
-                  <span class="marker">Before talking about what this project is</span> I will explain two methods,
-                  <span class="marker">Gramian Angular Field (GAF)</span> and the <span class="marker">Sure-Fire
-                    arbitrage strategy</span>, that are used in this personal
-                  project.<br><br>In this paper, they used <span class="marker">GAF</span>
-                  to encode Time Series data into heatmap images that fed into ConvNet to capture hidden features.<br>
-                  They used Deep Reinforcement Learning (DRL) model in order to optimize a trading strategy, the
-                  Sure-Fire arbitrage strategy, which is a variant of the Martingale.<br><br>
-                <h5>The Sure-Fire starategy</h5><br>
-                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                  <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i>
-                  </div>
-                  <p class="mb-0 mt-2 font-italic">
-                  <div class="row">
-                    <div class="column">
-                      <img src="img/sf1.png" class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="column">
-                      <img src="img/sf2.png" class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="column">
-                      <img src="img/sf3.png" class="img-fluid" alt="Responsive image">
-                    </div>
-                  </div>
-                  First, as illustrated in <span class="marker">Fig. 2</span>, we purchase one unit at any
-                  price and set a stop-gain price of +k and a stop-loss price of
-                  −2k. At the same time, we select a price with a difference
-                  of −k to the buy price and +k to the stop-loss price and
-                  set a backhand limit order for three units.
-                  Backhand refers to engaging in the opposite behavior. The backhand of buying
-                  is selling and the backhand of selling is buying. A limit order
-                  refers to the automatic acquisition of corresponding units.<br>
-                  As illustrated in <span class="marker">Fig. 3</span>, when a limit order is triggered,
-                  and three units are successfully sold backhand, we place an
-                  additional backhand limit order, where the buy price is +k to
-                  the sell price and −k to the stop-loss price. We set the stopgain point as the difference of
-                  +k
-                  and the stop-loss point as
-                  the difference of −2k, after which an additional six units are
-                  bought.<br>
-                  As illustrated in <span class="marker">Fig. 4</span>, the limit order is triggered in
-                  the third transaction. The final price exceeded the stop-gain
-                  price of the first transaction, the stop-loss price of the second
-                  transaction, and the stop-gain price of the third transaction. In
-                  this instance, the transaction is complete. The calculation in
-                  the right block shows that the profit is +1k.
-                  </p>
-                  <footer class="blockquote-footer pt-4 mt-4 border-top">
-                    <cite title="Source Title">Forex Trading System with Deep Reinforcement Learning</cite>
-                  </footer>
-                </blockquote>
-                <br>
-                <h5>GAF encoding</h5>
-                On the left side, it shows close price in 5 minutes time frame with 12 window size.<br>
-                The other one is a heatmap image after encoded by using GAF.
-                <div class="row">
-                  <div class="column">
-                    <img src="img/close_example.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/gaf_example.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                </div>
-                <h3>About this project</h3>
-                <img src="img/app_development_forex.png" class="img-fluid" alt="Responsive image">
-                This is a personal project to learn about Reinforcement Learning and to see if it is possible
-                to make profit with DRL in the Forex market.<br><br>
-                <h5>What comes into the DRL and what comes out from the DRL.</h5>
-                <span class="marker">What comes into DRL model</span> is the encoded images as the state.<br>
-                And <span class="marker">what comes out from DRL</span> as well as what DRL actions are Stop
-                Loss Take Profit (SLTP) pips,
-                order type, and max level limit.<br><br>
-                -&ensp;&ensp;<span class="marker">SLTP pips</span>: Which is the size from the entry price to take
-                profit and stop loss price in
-                pips.<br>
-                -&ensp;&ensp;<span class="marker">Order type</span>: DRL model chooses one of the order types from
-                buy, sell, or stay for each
-                given state.<br>
-                -&ensp;&ensp;<span class="marker">Max level limit</span>: How many times we place a reverse
-                order.<br><br>
-                <h5>MVP</h5>
-                I had created <span class="marker">MVP within a month</span> which runs on AWS EC2 where <span
-                  class="marker">everything is automated</span>.
-                What the MVP does is that it runs on live data and places order on live data by using API provided
-                from Oanda, which is a broker I use.<br><br>
-                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                  <p class="mb-0 mt-2 font-italic">
-                    Here is <span class="marker">detailes of MVP</span>. <span class="marker">Everything
-                      below is
-                      automated</span>.<br>
-                    - Every Monday after the Oceania market opens (at night on Sunday (GMT)), the server is booted. I
-                    set this up by using <span class="marker">CloudWatch</span> on AWS.<br>
-                    - Run bash shell when boot to open TMUX with a session in which the main Python script runs.<br>
-                    - Gets the last 2 hours data, Open, High, Low, and Close and converts to a heatmap image by using
-                    GAF.<br>
-                    - DRL model decides the order type, buy, sell, or stay, SLTP pips which is the size for each of
-                    Stop-Loss and Take-Profit, and Max limit level, how many times it places a reverse order. Keep
-                    doing
-                    this until the New York market close on Friday.<br>
-                    - After the NY market close every Friday, I set up the server shut down in order not to waste
-                    money on weekends.<br>
-                    - Additionally, I implemented a feature that sends me a push message to my LINE account every day
-                    when the NY market close with trading results of each day.<br>
-                  </p>
-                </blockquote>
-                <br>
-                <h5>Obstacles</h5>
-                -&ensp;&ensp;<span class="marker">One of the biggest things</span> which I was stuck on was that DRL
-                model <span class="marker">did not
-                  make any profit</span> when it was run on live data even though I could reproduce similar result
-                with the one in the original paper. This
-                took me a while to figure out but eventually it turned out that <span class="marker">there was a
-                  difference</span> between the data I
-                used for training and the live data.<br>
-                The training data was CSV format which columns for DateTime, Open, High, Low, Close, and Volume and
-                each row corresponded to each time frame.
-                The problem was that <span class="marker">each row</span> in the training data is <span
-                  class="marker">just a result of price movements in a
-                  time frame</span>. For example, if the time frame is 5
-                minutes, each row is corresponding to the result of movings of price during the 5 minutes.<br>
-                But in live data, we see the price is moving for 5 minutes. So <span class="marker">the training data
-                  was not able to
-                  describe the price movements in each time frame</span>.<br>
-                <span class="marker">The way I solved</span> this problem was <span class="marker">using smaller time
-                  frame data</span> to
-                describe price movements.<br>
-                <div class="row">
-                  <div class="column">
-                    <img src="img/price_movings_5min.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/price_movings_5sec.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                </div>
-                <br>
-                <br>
-                -&ensp;&ensp;<span class="marker">DRL model always took STAY as an action after 600
-                  episodes</span>.&ensp;&ensp;&ensp;&ensp;<i>Updated: 2020/02/23</i><br>
-                Here is the result of training DRL model for 900
-                episodes.
-                <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
-                The result shows basically three facts.<br>
-                &ensp;&ensp;&ensp;&ensp;&ensp;- The more training goes the
-                more trades happened.<br>
-                &ensp;&ensp;&ensp;&ensp;&ensp;- The model's performance has
-                been improved as training
-                goes.<br>
-                &ensp;&ensp;&ensp;&ensp;&ensp;<span class="marker">- DRL
-                  model always took STAY as an
-                  action</span>. <span class="marker">(Exploration problem)</span><br>
-                <span class="marker">Firstly, I tuned up some parameters for exploration.</span><br>
-                <span class="marker">In the original paper</span>, they had implemented only <span
-                  class="marker">BUY</span>
-                and <span class="marker">SELL</span> for the order type but <span class="marker">STAY</span>.<br>After
-                running the
-                base model on live data that I implemented
-                exactly the same as the one in the original paper, I figured out there were timings when it shouldn't
-                have placed orders, instead, it should have just STAY.<br>
-                So I had added STAY to the base in which DRL was able to take as
-                an action.<br>
-                But the reason why DRL took STAY after certain episodes could be
-                that <span class="marker">the model might figure out that
-                  always taking STAY as an action would be a way to maximize the total reward</span>. Whatsmore it had
-                stopped <span class="marker">exploring</span>.
-                <br>
-                <br>
-                So I <span class="marker">defined a new reward function for STAY action</span> by using a kind
-                of <span class="marker">Supervised approach</span>.<br>
-                I defined where the DRL model should STAY and not. For example, if the
-                price will move directly
-                Take-Profit line directly in the next 10 minutes, it shouldn't stay.<br>
-                The new reward function for STAY actions that shouldn't have STAY
-                is as follows:<br><br>
-                <div class="text-center">
-                  <a href="https://www.codecogs.com/eqnedit.php?latex=\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
-                    target="_blank"><img
-                      src="https://latex.codecogs.com/gif.latex?\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
-                      title="\textrm{Reward} = \sqrt{\frac{\textrm{Expected profit}}{\textrm{Base pip size}}}" /></a><br>
-                </div><br>
-                <hr>
-                For example, if we buy $1 USD at 109.050 JPY. Then our target price
-                could be, let's say, 109.080 JPY. So here
-                we would want to get 3 pips. Expected profit would be calculated by (109.080 - 109.050). And the base
-                pip size I use is 0.001 in USDJPY currency pair.
-                So the reward would be 5.4772.
-                <hr>
-                <span class="marker">Otherwise, the reward would be 0</span>.<br>
 
-                <img src="img/result_ep0_ep1000_new_reward_exploration_window48.png" class="img-fluid"
-                  alt="Responsive image">
-                This is the result of the training with the new reward function for STAY and updated
-                hyperparameters.<br>
-                As you can see, <span class="marker">successfully avoided the model taking the same actions</span>
-                after certain episodes. But <span class="marker">the
-                  model's performance is not good</span> because <span class="marker">probably I set exploration
-                  parameter too high and the model did not try exploiting enough</span>.<br>
-                I will talk about how to improve the model's performance in the next section, <span
-                  class="marker">"Trying to improve the
-                  DRL"</span>.<br><br>
 
-                <h5>Trying to Improve the DRL</h5>
-                I have been trying to improve the DRL model by changing the archtecture of CNN and tuning
-                hyperparameters for the PPO method.<br><br>
-                - <span class="marker">Different CNN archtecture</span><br>
-                The first archtecture I used was the same as one that the author used.
-                For the sake of testing, I created a CNN model on Colab to see how well the archtecture can classify
-                given images encoded by GAF into 2 categories, SHOULD STAY or not.
-                Here are the results of the old version and new version.<br><br>
-                <table width="100%" cellpadding="10" border="1">
-                  <tr>
-                    <th></th>
-                    <th>Old archtecture</th>
-                    <th>New archtecture</th>
-                  </tr>
-                  <tr>
-                    <td>Confusion matrix</td>
-                    <td><img src="img/old_cnn_archtecture.png" class="img-fluid" alt="Responsive image"></td>
-                    <td><img src="img/new_cnn_archtecture2.png" class="img-fluid" alt="Responsive image"></td>
-                  </tr>
-                  <tr>
-                    <td>Precision</td>
-                    <td>0.8805369127516779</td>
-                    <td><span class="marker">0.8877742946708463</span></td>
-                  </tr>
-                  <tr>
-                    <td>Recall</td>
-                    <td>0.8298545224541429</td>
-                    <td><span class="marker">0.8956356736242884</span></td>
-                  </tr>
-                  <tr>
-                    <td>F1</td>
-                    <td>0.8544448062520352</td>
-                    <td><span class="marker">0.8916876574307304</span></td>
-                  </tr>
-                </table>
-                <br>
-                I added MaxPooling layers following Conv layers and changed the activation function to tanh from relu
-                in Conv lasyers and a
-                Dense layer.
-                <br><br>
-                - <span class="marker">Tuning hyperparameters</span><br>
-                I have spent some time tuning hyperparameters. What I have found so far is that <span class="marker">the
-                  epsilon for action
-                  exploration parameter</span> is pretty important because there is a <span class="marker">concept of
-                  exploration and
-                  exploitation
-                  trade-off</span>.<br><br>
-
-                <span class="marker">* Training curve will be shown once training gets done.</span>
-                <br>
-                <br>
-                <h5>Worth to try</h5>
-                - Define a new state: The way I use to define state is that encoding Open, High, Low, Close by using
-                GAF and stack them up to create 4 channel image.
-                I believe that having technical indicators could help to improve model's performance.
-                Here is my idea. Create 4 images whose size is (window size, window size, 4), then tiled them up as
-                a
-                new state.
-                <div class="row">
-                  <div class="column">
-                    <img src="img/img1.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/img2.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/img3.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="column">
-                    <img src="img/img4.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/new_state.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- A project section done -->
-
-          <p>&ensp;</p>
-
-          <!-- A project section start -->
+          <!-- An experience start -->
           <div class="col-sm-12 mb-2">
             <div class="card">
               <div class=" card-body">
-                <div class="resume-date text-md-right">
-                  <span class="text-primary">Mar 2020 - Mar 2020</span>
-                </div>
-                <h3 class="card-title">Detecting COVID-19 with CNN<a href="https://github.com/boblef/detect_COVID19"
-                    target="_blank">&ensp;[github]</a></h3>
-                <p class="card-text">
-                <h5>Disclaimer</h5>
-
-                COVID-19 detection is only for educational purposes that don't mean highly accurate COVID-19 diagnosis
-                system.
-                <br><br>
-                <h5>Dataset</h5>
-
-                Positive samples come from <a href="https://github.com/ieee8023/covid-chestxray-dataset">this
-                  repo</a>.
-                And I used <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images
-                  (Pneumonia) dataset</a> for the samples of negative COVID-19.<br>
-                <span class="marker">Each image was reshaped to (224, 224)</span> before being fed into the model
-                whose archtecture is discussed
-                down below.<br><br>
-
-                <strong>Train</strong>
-
-                - Positives: 67 images
-                - Negatives: 67 images
-
-                20% of training samples were used for the validation set.<br>
-                <strong>Test</strong>
-
-                - Positives: 6 images
-                - Negatives: 6 images
-                <br>
-                <br>
-                <div class="column">
-                  <i><strong>Positive samples</strong></i>
-                  <img src="img/positive_samples.png" class="img-fluid" alt="Responsive image">
-                  <i><strong>Negative samples</strong></i>
-                  <img src="img/negative_samples.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <br>
-
-                <div class="column">
-
-                </div>
-
-                <p>As we can see here, the resolution and quality of images of each category are a bit different, but
-                  I just ignore that for the educational purpose. </p>
-
-                <br>
-                <h5>Model</h5>
-
-                I grabbed <span class="marker">VGG16</span> and added some layers, Avg_Pool2D, 2 Dense layers, and
-                Dropout
-                between the dense
-                layers.
-                Then trained only layers added.<br>
-
-                <strong>Added layers</strong>
-                <div class="column">
-                  <img src="img/additional_layers.png" class="img-fluid" alt="Responsive image">
-                </div>
-
-                <h5>Result</h5>
-                As we can see here, it is <span class="marker">underfitting</span> on training data but the results on
-                test data I got were 1.0
-                for Recall, Precision, and F1 score.
-
-                <span class="marker">I can definitely say that the number of samples for test data is not enough,
-                  however, I could get a
-                  good result even small samples of training data with finetuning</span>.
-                <div class="column">
-                  <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
-                  <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
-                </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- A Project section done-->
-
-          <p>&ensp;</p>
-
-          <!-- A project section start -->
-          <div class="col-sm-12 mb-2">
-            <div class="card">
-              <div class=" card-body">
-                <div class="resume-date text-md-right">
-                  <span class="text-primary">Aug 2019 - Sep 2019</span>
-                </div>
-                <h3 class="card-title">Ticket-Dodger<a href="https://ticket-dodger.com/"
-                    target="_blank">&ensp;[link]</a></h3>
-                <p class="card-text">This is the final team project in Machine Learning Bootcamp at 7 Gate Academy and
-                  is <span class="marker">an application predicting the likelihood of getting a parking ticket</span> in
-                  the Vancouver area based on
-                  the user's geolocation and the time. When a user taps a location at where he is planning to park his
-                  car or at where he is currently parking his car, that is going to be a trigger to call <span
-                    class="marker">AWS Lambda</span>
-                  where our machine learning model runs to predict the likelihood.<br><br>
-
-                  Here is how I and <a href="https://www.linkedin.com/in/parampaulnahal/">Paul</a> had <span
-                    class="marker">created</span> this application <span class="marker">within a month</span>.
-                  <img src="img/app_development_ticket_dodger.png" class="img-fluid" alt="Responsive image"><br>
-                  We found dataset on <a href="https://data.vancouver.ca/datacatalogue/index.htm"
-                    target="_blank">Vancouver open data catalog</a>, the original dataset had the information of parking
-                  tickets issued such as date time, address including block, infraction, status, etc.
-                  However the dataset obviously <span class="marker">did not have any target variable that we could
-                    use</span> in our case the likelihood or probability
-                  of getting a parking ticket. I will <span class="marker">explain how we solve this problem in
-                    Obstacles section</span>
-                  below but the <span class="marker">simple answer is that we created by using traffic counts</span> on
-                  each
-                  street.<br>
-                  We <span class="marker">estimated the probability</span> for each street and thresholded them to
-                  create three categories, <span class="marker">Low</span>,
-                  <span class="marker">Medium</span>, and <span class="marker">High</span> that were the likelihood we
-                  were predicting.
-                  So we <span class="marker">dealt with this problem as a classification problem</span> because it was
-                  more user-friendly than
-                  giving users a probability.
+                <div class="resume-content">
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">Jan 2019 - Jun 2019</span>
+                  </div>
+                  <h3 class="mb-0">Machine Learning Developer Internship</h3>
+                  <div class="subheading mb-3">Singular Software Inc.&ensp;<a
+                      href="docs/Reference_letter_for_Kohei Suzuki.pdf" target="_blank">[SEE
+                      Reference from the CEO]</a></div>
+                  <hr>
+                  <h5>About the company</h5>
+                  <p><a href="https://www.linkedin.com/company/singular-software-inc-/about/" target="_blank">Singular
+                      Software</a> has created a phone-based app, <a href="https://heardthatapp.com/"
+                      target="_blank">HeardThat</a> launched at CES 2020, that
+                    substantially improves the utility
+                    of hearing aids
+                    and other hearing assistive devices in noisy social situations.<br>The company was nominated for
+                    the top 10 companies in <a href="https://www.newventuresbc.com/" target="_blank">New Ventures BC
+                      2019</a>.<br>
+                    I worked as a machine learning developer intern and involved in creating HeardThat app in the
+                    early
+                    developing stage.
+                  </p>
+                  <hr>
+                  <h5>Responsibilities</h5>
+                  <p>When I joined the team, the first thing I did was that tried to catch up what they were trying to
+                    do and how to solve the problem and to understand the key part of the workflow such as preprocessing
+                    step, what comes into the models, and what comes out from the models. After gained solid
+                    understandings, I trained machine learning models and did evaluations of models that team members
+                    trained. </p>
+                  <p>- One of the things I developed for the purpose of the evaluation was an internal visualization
+                    tool with Flask where team members can check the spectrogram and waveform of any audio files
+                    interactively. Below gif is what I have found on twitter and is pretty similar to what I developed
+                    except for one feature that the tool I developed was also able to do arithmetic calculation between
+                    audio files and to plot its spectrogram and waveform.</p><br>
+                  <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i>
+                    </div>
+                    <p class="mb-0 mt-0 font-italic" align="center">
+                      <img src="img/internal_platform_sample.gif" class="img-fluid" alt="Responsive image" , width="300"
+                        , height="200">
+                    </p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top" align="center">
+                      <cite title="Source Title">https://twitter.com/_ScottCondron/status/1268592561301659648</cite>
+                    </footer>
+                  </blockquote>
                   <br>
 
-                <h5>EDA</h5>
-                While we were working on feature engineering we found that <span class="marker">the time was
-                  definetely a factor</span>.
-                As you can see below, there is high chances for getting a ticket around 3 PM.<br>
+                  <p>- Another thing I developed was an external platform which was for Mechanical Turk where we could
+                    collect scores and transcription from people so that we were then able to calculate metrics such as
+                    Mean Opinion Score (MOS) and Word Error Rate (WER) that were part of metrics that we used to
+                    evaluate deep learning models.</p>
+
+                  <p>This internship was a remote work so we had a daily meeting on the call every day to catch up on
+                    what everyone had done so far and what things each member was working on. From this experience, I
+                    gained explanation skills that are concise and well structured.</p>
+                  <hr>
+                  <h5>Technics</h5>
+                  <p>
+                    - Python: TensorFlow, Numpy, Scipy, Matplotlib, Seaborn, Bokeh, Flask, Jupyter Notebook,
+                    Pandas<br>
+                    - Others: Ubuntu, Git, SQLite, Scrum, SSH, Anaconda, JavaScript</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- An experience section done-->
+
+      <p>&ensp;</p>
+
+
+  </div>
+
+  </section>
+
+  <hr class="m-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+    <div class="w-100">
+      <h2 class="mb-5">Projects</h2>
+      <!-- <p>All project source codes can be found in my <a href="https://github.com/RainBoltz" target="_blank"><i
+              class="fab fa-github"></i> GITHUB</a></p> -->
+      <div class="row">
+        <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <!--<img class="card-img-top" src="img/profile.jpg" alt="loading...">-->
+            <div class="card-body">
+              <div class="resume-date text-md-right">
+                <span class="text-primary">Jan 2020 - Present</span>
+              </div>
+              <h3 class="card-title">Forex Trading System with Deep Reinforcement Learning</h3>
+              <p class="card-text">I loosely followed <a href="https://arxiv.org/pdf/1908.08036.pdf"
+                  target="_blank">this</a> paper,
+                Deep Reinforcement Learning for Foreign
+                Exchange Trading. What I mean by loosely is that I implemented their idea as the base and updated some
+                things which I will explain in the Obstacles section.<br><br>
+                <span class="marker">Before talking about what this project is</span> I will explain two methods,
+                <span class="marker">Gramian Angular Field (GAF)</span> and the <span class="marker">Sure-Fire
+                  arbitrage strategy</span>, that are used in this personal
+                project.<br><br>In this paper, they used <span class="marker">GAF</span>
+                to encode Time Series data into heatmap images that fed into ConvNet to capture hidden features.<br>
+                They used Deep Reinforcement Learning (DRL) model in order to optimize a trading strategy, the
+                Sure-Fire arbitrage strategy, which is a variant of the Martingale.<br><br>
+              <h5>The Sure-Fire starategy</h5><br>
+              <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i>
+                </div>
+                <p class="mb-0 mt-2 font-italic">
                 <div class="row">
                   <div class="column">
-                    <img src="img/image1.gif" class="img-fluid" alt="Responsive image">
+                    <img src="img/sf1.png" class="img-fluid" alt="Responsive image">
                   </div>
                   <div class="column">
-                    <img src="img/td_time2.png" class="img-fluid" alt="Responsive image">
+                    <img src="img/sf2.png" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="column">
+                    <img src="img/sf3.png" class="img-fluid" alt="Responsive image">
                   </div>
                 </div>
-                <h5>Training Machine Learning Models</h5>
-                As I mentioned, this was a classification problem so we started from training a <span
-                  class="marker">simple logistic
-                  regresssion</span> because it was easy to implement.<br>
-                Afterwords, we trained different kind of models such as <span class="marker">Random Forest</span>,
-                <span class="marker">XGBoost</span>, and <span class="marker">Neural Networks</span>.
-                At first we made sure that there was a capacity for models to learn something from our data by trying
-                them to <span class="marker">overfit</span> on the training data.<br>
-                Then we started <span class="marker">iteratively building more complecated models</span> by changing,
-                for instance in <span class="marker">Multi Layer
-                  Perceptron (MLP)</span>, changing the number of
-                neurons in each layer, the number of layers, optimizers, and so on.<br>
-                Here is one of the results we got from MLP and XGBoost after <span class="marker">Hyperparameter
-                  search</span> by using <a href="https://github.com/maxpumperla/hyperas" target="_blank">Hyperas</a>
-                and <a href="https://github.com/pfnet/optuna">Optuna</a> that are framework in Python for Hyper
-                parameter search.
-                <div class="row">
-                  <div class="column">
-                    <img src="img/td_training_curves.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="column">
-                    <img src="img/td_cm.png" class="img-fluid" alt="Responsive image">
-                  </div>
-                </div>
-                <h5>Model Evaluation</h5>
-                <span class="marker">Subjectively evaluating our models was difficult</span>. The best that we could
-                say was that we did a pretty
-                <span class="marker">good job of determining the low risk</span> of getting a ticket. It is much more
-                <span class="marker">important for us to have accurate LOW risks</span>.
-                For example, if you park expecting a low risk and you end up getting a ticket, it will be a much worse
-                <span class="marker">user experience</span> than if you went in expecting a ticket and got none!
-                <br><br>
-                We did chase down a parking ticket enforcer and asked for his opinion and he gave us some streets that
-                are common of getting a parking ticket. Our predictions from XGBoost were pretty good.
-                <span class="marker">Due to model's performance and inference time, 28.19 [ms], we choose XGBoost
-                  model</span>.<br><br>
-                <h5>Application Archtecture</h5>
-                <strong>Backend</strong><br>
-                &ensp;&ensp;- Server: Flask running behind Gunicorn, and NGinx<br>
-                &ensp;&ensp;- Custom built location to street matching engine<br>
-                &ensp;&ensp;- XGBoost<br>
-                &ensp;&ensp;- Deployment: DigitalOcean Droplet<br>
-                &ensp;&ensp;&ensp;&ensp;- 1 vCPU<br>
-                &ensp;&ensp;&ensp;&ensp;- 1 GB RAM<br>
-                &ensp;&ensp;&ensp;&ensp;- 24 GB SSD<br>
-                &ensp;&ensp;&ensp;&ensp;- ($5 a month)<br>
-                <strong>Client Side</strong><br>
-                &ensp;&ensp;- Website: HTML and Javascript<br>
-                &ensp;&ensp;- Map: LeafletJS serving OpenStreetMap (No google!)<br>
-                &ensp;&ensp;- Deployment: Github Pages<br>
-                &ensp;&ensp;&ensp;&ensp;- Free<br><br>
-                <h5>How did we work as a team</h5><br>
-                Since we lived a little bit far to work together in person, it was <span class="marker">important that
-                  we had a good system
-                  to work together</span>.<br>
-                We started by working together by sourcing our data, evaluating what we have and creating a merged
-                base dataset.<br>
-                In order to streamline our approach, we then <span class="marker">split up our roles to focus on
-                  primary areas</span>, building
-                machine learning models was my focus and Paul was working on development.<br>
-                Afterwards, we <span class="marker">did a knowledge transfer</span> to fill each other on the gaps
-                that we might have missed out
-                on.<br><br>
-
-                We did loosely<span class="marker"> work in the agile way</span>, changing things as we needed.
-                We made sure we reviewed each others work to the standards that we set out for ourselves.
-                To do so we used <span class="marker">Trello to manage our tasks</span>. Here are the some of the tags
-                we had in our channel on
-                Trello.<br>
-                &ensp;&ensp;- Product backlog<br>
-                &ensp;&ensp;- Current sprint<br>
-                &ensp;&ensp;- Doing<br>
-                &ensp;&ensp;- Review<br>
-                &ensp;&ensp;- Blocked<br>
-                &ensp;&ensp;- Done<br>
-                &ensp;&ensp;&ensp;&ensp;- Nothing moves here unless it is reviewed by the other<br>
-
-                We also has a daily meeting.<br><br>
-                <h5>Obstacles</h5>
-                -&ensp;&ensp;Target variable creation
-                As I mentioned above, we did not have a target variable, the probability or the likelihood of getting
-                a parking ticket.
-                We <span class="marker">created one by using three datasets</span>, one that contained the information
-                of parking tickets issued,
-                second that had the traffic counts on each street including some private streets, and third that had
-                almost all of the street name in the Vancouver area.<br>
-                It was <span class="marker">important for us to define what we mean by “Risk".</span><br>
-                It was a fairly arbitrary term.
-                We had decided to use the number of tickets given, divided by the amount of traffic on the street.
-                In this way, <span class="marker">we defined risk RELATIVE to the risk of other streets</span>.
-                The formula for estimating the probability for each block on each street was as follows:<br><br>
-                <div class="text-center">
-                  <a href="https://www.codecogs.com/eqnedit.php?latex=\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
-                    target="_blank"><img
-                      src="https://latex.codecogs.com/gif.latex?\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
-                      title="\textbf{The number of tickets / The number of traffic counts}" /></a>
-                </div><br>
-
-                In order to do the calculation, we needed to make sure that <span class="marker">each street</span> in
-                the parking ticket dataset
-                and traffic counts dataset were <span class="marker">the same format</span> to marge the two datasets
-                with the streets as the key.<br>
-                Here is an example of a street we needed to clean up: <span class="marker">"WEST GEORGIA"</span> and
-                <span class="marker">"GEORGIA W"</span><br>
-                So we used a Python framework, <a href="https://github.com/seatgeek/fuzzywuzzy"
-                  target="_blank">fuzzywazzy</a>, to clean up the streets name.
+                First, as illustrated in <span class="marker">Fig. 2</span>, we purchase one unit at any
+                price and set a stop-gain price of +k and a stop-loss price of
+                −2k. At the same time, we select a price with a difference
+                of −k to the buy price and +k to the stop-loss price and
+                set a backhand limit order for three units.
+                Backhand refers to engaging in the opposite behavior. The backhand of buying
+                is selling and the backhand of selling is buying. A limit order
+                refers to the automatic acquisition of corresponding units.<br>
+                As illustrated in <span class="marker">Fig. 3</span>, when a limit order is triggered,
+                and three units are successfully sold backhand, we place an
+                additional backhand limit order, where the buy price is +k to
+                the sell price and −k to the stop-loss price. We set the stopgain point as the difference of
+                +k
+                and the stop-loss point as
+                the difference of −2k, after which an additional six units are
+                bought.<br>
+                As illustrated in <span class="marker">Fig. 4</span>, the limit order is triggered in
+                the third transaction. The final price exceeded the stop-gain
+                price of the first transaction, the stop-loss price of the second
+                transaction, and the stop-gain price of the third transaction. In
+                this instance, the transaction is complete. The calculation in
+                the right block shows that the profit is +1k.
                 </p>
+                <footer class="blockquote-footer pt-4 mt-4 border-top">
+                  <cite title="Source Title">Forex Trading System with Deep Reinforcement Learning</cite>
+                </footer>
+              </blockquote>
+              <br>
+              <h5>GAF encoding</h5>
+              On the left side, it shows close price in 5 minutes time frame with 12 window size.<br>
+              The other one is a heatmap image after encoded by using GAF.
+              <div class="row">
+                <div class="column">
+                  <img src="img/close_example.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/gaf_example.png" class="img-fluid" alt="Responsive image">
+                </div>
               </div>
+              <h3>About this project</h3>
+              <img src="img/app_development_forex.png" class="img-fluid" alt="Responsive image">
+              This is a personal project to learn about Reinforcement Learning and to see if it is possible
+              to make profit with DRL in the Forex market.<br><br>
+              <h5>What comes into the DRL and what comes out from the DRL.</h5>
+              <span class="marker">What comes into DRL model</span> is the encoded images as the state.<br>
+              And <span class="marker">what comes out from DRL</span> as well as what DRL actions are Stop
+              Loss Take Profit (SLTP) pips,
+              order type, and max level limit.<br><br>
+              -&ensp;&ensp;<span class="marker">SLTP pips</span>: Which is the size from the entry price to take
+              profit and stop loss price in
+              pips.<br>
+              -&ensp;&ensp;<span class="marker">Order type</span>: DRL model chooses one of the order types from
+              buy, sell, or stay for each
+              given state.<br>
+              -&ensp;&ensp;<span class="marker">Max level limit</span>: How many times we place a reverse
+              order.<br><br>
+              <h5>MVP</h5>
+              I had created <span class="marker">MVP within a month</span> which runs on AWS EC2 where <span
+                class="marker">everything is automated</span>.
+              What the MVP does is that it runs on live data and places order on live data by using API provided
+              from Oanda, which is a broker I use.<br><br>
+              <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                <p class="mb-0 mt-2 font-italic">
+                  Here is <span class="marker">detailes of MVP</span>. <span class="marker">Everything
+                    below is
+                    automated</span>.<br>
+                  - Every Monday after the Oceania market opens (at night on Sunday (GMT)), the server is booted. I
+                  set this up by using <span class="marker">CloudWatch</span> on AWS.<br>
+                  - Run bash shell when boot to open TMUX with a session in which the main Python script runs.<br>
+                  - Gets the last 2 hours data, Open, High, Low, and Close and converts to a heatmap image by using
+                  GAF.<br>
+                  - DRL model decides the order type, buy, sell, or stay, SLTP pips which is the size for each of
+                  Stop-Loss and Take-Profit, and Max limit level, how many times it places a reverse order. Keep
+                  doing
+                  this until the New York market close on Friday.<br>
+                  - After the NY market close every Friday, I set up the server shut down in order not to waste
+                  money on weekends.<br>
+                  - Additionally, I implemented a feature that sends me a push message to my LINE account every day
+                  when the NY market close with trading results of each day.<br>
+                </p>
+              </blockquote>
+              <br>
+              <h5>Obstacles</h5>
+              -&ensp;&ensp;<span class="marker">One of the biggest things</span> which I was stuck on was that DRL
+              model <span class="marker">did not
+                make any profit</span> when it was run on live data even though I could reproduce similar result
+              with the one in the original paper. This
+              took me a while to figure out but eventually it turned out that <span class="marker">there was a
+                difference</span> between the data I
+              used for training and the live data.<br>
+              The training data was CSV format which columns for DateTime, Open, High, Low, Close, and Volume and
+              each row corresponded to each time frame.
+              The problem was that <span class="marker">each row</span> in the training data is <span
+                class="marker">just a result of price movements in a
+                time frame</span>. For example, if the time frame is 5
+              minutes, each row is corresponding to the result of movings of price during the 5 minutes.<br>
+              But in live data, we see the price is moving for 5 minutes. So <span class="marker">the training data
+                was not able to
+                describe the price movements in each time frame</span>.<br>
+              <span class="marker">The way I solved</span> this problem was <span class="marker">using smaller time
+                frame data</span> to
+              describe price movements.<br>
+              <div class="row">
+                <div class="column">
+                  <img src="img/price_movings_5min.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/price_movings_5sec.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+              <br>
+              <br>
+              -&ensp;&ensp;<span class="marker">DRL model always took STAY as an action after 600
+                episodes</span>.&ensp;&ensp;&ensp;&ensp;<i>Updated: 2020/02/23</i><br>
+              Here is the result of training DRL model for 900
+              episodes.
+              <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
+              The result shows basically three facts.<br>
+              &ensp;&ensp;&ensp;&ensp;&ensp;- The more training goes the
+              more trades happened.<br>
+              &ensp;&ensp;&ensp;&ensp;&ensp;- The model's performance has
+              been improved as training
+              goes.<br>
+              &ensp;&ensp;&ensp;&ensp;&ensp;<span class="marker">- DRL
+                model always took STAY as an
+                action</span>. <span class="marker">(Exploration problem)</span><br>
+              <span class="marker">Firstly, I tuned up some parameters for exploration.</span><br>
+              <span class="marker">In the original paper</span>, they had implemented only <span
+                class="marker">BUY</span>
+              and <span class="marker">SELL</span> for the order type but <span class="marker">STAY</span>.<br>After
+              running the
+              base model on live data that I implemented
+              exactly the same as the one in the original paper, I figured out there were timings when it shouldn't
+              have placed orders, instead, it should have just STAY.<br>
+              So I had added STAY to the base in which DRL was able to take as
+              an action.<br>
+              But the reason why DRL took STAY after certain episodes could be
+              that <span class="marker">the model might figure out that
+                always taking STAY as an action would be a way to maximize the total reward</span>. Whatsmore it had
+              stopped <span class="marker">exploring</span>.
+              <br>
+              <br>
+              So I <span class="marker">defined a new reward function for STAY action</span> by using a kind
+              of <span class="marker">Supervised approach</span>.<br>
+              I defined where the DRL model should STAY and not. For example, if the
+              price will move directly
+              Take-Profit line directly in the next 10 minutes, it shouldn't stay.<br>
+              The new reward function for STAY actions that shouldn't have STAY
+              is as follows:<br><br>
+              <div class="text-center">
+                <a href="https://www.codecogs.com/eqnedit.php?latex=\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
+                  target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
+                    title="\textrm{Reward} = \sqrt{\frac{\textrm{Expected profit}}{\textrm{Base pip size}}}" /></a><br>
+              </div><br>
+              <hr>
+              For example, if we buy $1 USD at 109.050 JPY. Then our target price
+              could be, let's say, 109.080 JPY. So here
+              we would want to get 3 pips. Expected profit would be calculated by (109.080 - 109.050). And the base
+              pip size I use is 0.001 in USDJPY currency pair.
+              So the reward would be 5.4772.
+              <hr>
+              <span class="marker">Otherwise, the reward would be 0</span>.<br>
+
+              <img src="img/result_ep0_ep1000_new_reward_exploration_window48.png" class="img-fluid"
+                alt="Responsive image">
+              This is the result of the training with the new reward function for STAY and updated
+              hyperparameters.<br>
+              As you can see, <span class="marker">successfully avoided the model taking the same actions</span>
+              after certain episodes. But <span class="marker">the
+                model's performance is not good</span> because <span class="marker">probably I set exploration
+                parameter too high and the model did not try exploiting enough</span>.<br>
+              I will talk about how to improve the model's performance in the next section, <span class="marker">"Trying
+                to improve the
+                DRL"</span>.<br><br>
+
+              <h5>Trying to Improve the DRL</h5>
+              I have been trying to improve the DRL model by changing the archtecture of CNN and tuning
+              hyperparameters for the PPO method.<br><br>
+              - <span class="marker">Different CNN archtecture</span><br>
+              The first archtecture I used was the same as one that the author used.
+              For the sake of testing, I created a CNN model on Colab to see how well the archtecture can classify
+              given images encoded by GAF into 2 categories, SHOULD STAY or not.
+              Here are the results of the old version and new version.<br><br>
+              <table width="100%" cellpadding="10" border="1">
+                <tr>
+                  <th></th>
+                  <th>Old archtecture</th>
+                  <th>New archtecture</th>
+                </tr>
+                <tr>
+                  <td>Confusion matrix</td>
+                  <td><img src="img/old_cnn_archtecture.png" class="img-fluid" alt="Responsive image"></td>
+                  <td><img src="img/new_cnn_archtecture2.png" class="img-fluid" alt="Responsive image"></td>
+                </tr>
+                <tr>
+                  <td>Precision</td>
+                  <td>0.8805369127516779</td>
+                  <td><span class="marker">0.8877742946708463</span></td>
+                </tr>
+                <tr>
+                  <td>Recall</td>
+                  <td>0.8298545224541429</td>
+                  <td><span class="marker">0.8956356736242884</span></td>
+                </tr>
+                <tr>
+                  <td>F1</td>
+                  <td>0.8544448062520352</td>
+                  <td><span class="marker">0.8916876574307304</span></td>
+                </tr>
+              </table>
+              <br>
+              I added MaxPooling layers following Conv layers and changed the activation function to tanh from relu
+              in Conv lasyers and a
+              Dense layer.
+              <br><br>
+              - <span class="marker">Tuning hyperparameters</span><br>
+              I have spent some time tuning hyperparameters. What I have found so far is that <span class="marker">the
+                epsilon for action
+                exploration parameter</span> is pretty important because there is a <span class="marker">concept of
+                exploration and
+                exploitation
+                trade-off</span>.<br><br>
+
+              <span class="marker">* Training curve will be shown once training gets done.</span>
+              <br>
+              <br>
+              <h5>Worth to try</h5>
+              - Define a new state: The way I use to define state is that encoding Open, High, Low, Close by using
+              GAF and stack them up to create 4 channel image.
+              I believe that having technical indicators could help to improve model's performance.
+              Here is my idea. Create 4 images whose size is (window size, window size, 4), then tiled them up as
+              a
+              new state.
+              <div class="row">
+                <div class="column">
+                  <img src="img/img1.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/img2.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/img3.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <img src="img/img4.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/new_state.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+              </p>
             </div>
           </div>
-          <!-- A project section done -->
         </div>
-      </div>
-    </section>
+        <!-- A project section done -->
 
-    <hr class="m-0">
+        <p>&ensp;</p>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
+        <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <div class=" card-body">
+              <div class="resume-date text-md-right">
+                <span class="text-primary">Mar 2020 - Mar 2020</span>
+              </div>
+              <h3 class="card-title">Detecting COVID-19 with CNN<a href="https://github.com/boblef/detect_COVID19"
+                  target="_blank">&ensp;[github]</a></h3>
+              <p class="card-text">
+              <h5>Disclaimer</h5>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">7 Gate Academy</h3>
-            <div class="subheading mb-3">Machine Learning Bootcamp&ensp;<a href="https://7gate.academy/"
-                target="_blank">[link]</a></div>
-            <div>I was <span class="marker">selected</span> the last 7 students who allowed to join the class <span
-                class="marker">from 120
-                candidates</span> in selection
-              process.
-              <p></p>
-              <span class="marker">Curriculum</span><br>
-              8 weeks, 3.5 hours * 4 days/week.<br>
-              1st week: Data Engineering, Modeling, BigData (ETL, DWH, Airflow, Spark)<br>
-              2nd week: Data Visualization (Matplotlib), Data Processing (Duplicated rows, Missing Values, Outliers,
-              Multiple Value Ranges, Non-numerical Data)<br>
-              3rd week: AutoML (Google Cloud, Microsoft Azure), ML Library (sklearn)<br>
-              4th week: MVP, Interpretability, Problem-solving, ML Technics (Bias, Variance, Regularization, etc)<br>
-              5th week: Planning and estimating the work, Data Science Scrum<br>
-              6th week: Team Project<br>
-              7th week: Team Project<br>
-              8th week: Presentation about the team project, <span class="marker"><a href="https://ticket-dodger.com/"
-                  target="_blank">Ticket-Dodger</span></a>
+              COVID-19 detection is only for educational purposes that don't mean highly accurate COVID-19 diagnosis
+              system.
+              <br><br>
+              <h5>Dataset</h5>
+
+              Positive samples come from <a href="https://github.com/ieee8023/covid-chestxray-dataset">this
+                repo</a>.
+              And I used <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images
+                (Pneumonia) dataset</a> for the samples of negative COVID-19.<br>
+              <span class="marker">Each image was reshaped to (224, 224)</span> before being fed into the model
+              whose archtecture is discussed
+              down below.<br><br>
+
+              <strong>Train</strong>
+
+              - Positives: 67 images
+              - Negatives: 67 images
+
+              20% of training samples were used for the validation set.<br>
+              <strong>Test</strong>
+
+              - Positives: 6 images
+              - Negatives: 6 images
+              <br>
+              <br>
+              <div class="column">
+                <i><strong>Positive samples</strong></i>
+                <img src="img/positive_samples.png" class="img-fluid" alt="Responsive image">
+                <i><strong>Negative samples</strong></i>
+                <img src="img/negative_samples.png" class="img-fluid" alt="Responsive image">
+              </div>
+              <br>
+
+              <div class="column">
+
+              </div>
+
+              <p>As we can see here, the resolution and quality of images of each category are a bit different, but
+                I just ignore that for the educational purpose. </p>
+
+              <br>
+              <h5>Model</h5>
+
+              I grabbed <span class="marker">VGG16</span> and added some layers, Avg_Pool2D, 2 Dense layers, and
+              Dropout
+              between the dense
+              layers.
+              Then trained only layers added.<br>
+
+              <strong>Added layers</strong>
+              <div class="column">
+                <img src="img/additional_layers.png" class="img-fluid" alt="Responsive image">
+              </div>
+
+              <h5>Result</h5>
+              As we can see here, it is <span class="marker">underfitting</span> on training data but the results on
+              test data I got were 1.0
+              for Recall, Precision, and F1 score.
+
+              <span class="marker">I can definitely say that the number of samples for test data is not enough,
+                however, I could get a
+                good result even small samples of training data with finetuning</span>.
+              <div class="column">
+                <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
+                <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
+              </div>
+              </p>
             </div>
+          </div>
+        </div>
+        <!-- A Project section done-->
+
+        <p>&ensp;</p>
+
+        <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <div class=" card-body">
+              <div class="resume-date text-md-right">
+                <span class="text-primary">Aug 2019 - Sep 2019</span>
+              </div>
+              <h3 class="card-title">Ticket-Dodger<a href="https://ticket-dodger.com/" target="_blank">&ensp;[link]</a>
+              </h3>
+              <p class="card-text">This is the final team project in Machine Learning Bootcamp at 7 Gate Academy and
+                is <span class="marker">an application predicting the likelihood of getting a parking ticket</span> in
+                the Vancouver area based on
+                the user's geolocation and the time. When a user taps a location at where he is planning to park his
+                car or at where he is currently parking his car, that is going to be a trigger to call <span
+                  class="marker">AWS Lambda</span>
+                where our machine learning model runs to predict the likelihood.<br><br>
+
+                Here is how I and <a href="https://www.linkedin.com/in/parampaulnahal/">Paul</a> had <span
+                  class="marker">created</span> this application <span class="marker">within a month</span>.
+                <img src="img/app_development_ticket_dodger.png" class="img-fluid" alt="Responsive image"><br>
+                We found dataset on <a href="https://data.vancouver.ca/datacatalogue/index.htm"
+                  target="_blank">Vancouver open data catalog</a>, the original dataset had the information of parking
+                tickets issued such as date time, address including block, infraction, status, etc.
+                However the dataset obviously <span class="marker">did not have any target variable that we could
+                  use</span> in our case the likelihood or probability
+                of getting a parking ticket. I will <span class="marker">explain how we solve this problem in
+                  Obstacles section</span>
+                below but the <span class="marker">simple answer is that we created by using traffic counts</span> on
+                each
+                street.<br>
+                We <span class="marker">estimated the probability</span> for each street and thresholded them to
+                create three categories, <span class="marker">Low</span>,
+                <span class="marker">Medium</span>, and <span class="marker">High</span> that were the likelihood we
+                were predicting.
+                So we <span class="marker">dealt with this problem as a classification problem</span> because it was
+                more user-friendly than
+                giving users a probability.
+                <br>
+
+              <h5>EDA</h5>
+              While we were working on feature engineering we found that <span class="marker">the time was
+                definetely a factor</span>.
+              As you can see below, there is high chances for getting a ticket around 3 PM.<br>
+              <div class="row">
+                <div class="column">
+                  <img src="img/image1.gif" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/td_time2.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+              <h5>Training Machine Learning Models</h5>
+              As I mentioned, this was a classification problem so we started from training a <span
+                class="marker">simple logistic
+                regresssion</span> because it was easy to implement.<br>
+              Afterwords, we trained different kind of models such as <span class="marker">Random Forest</span>,
+              <span class="marker">XGBoost</span>, and <span class="marker">Neural Networks</span>.
+              At first we made sure that there was a capacity for models to learn something from our data by trying
+              them to <span class="marker">overfit</span> on the training data.<br>
+              Then we started <span class="marker">iteratively building more complecated models</span> by changing,
+              for instance in <span class="marker">Multi Layer
+                Perceptron (MLP)</span>, changing the number of
+              neurons in each layer, the number of layers, optimizers, and so on.<br>
+              Here is one of the results we got from MLP and XGBoost after <span class="marker">Hyperparameter
+                search</span> by using <a href="https://github.com/maxpumperla/hyperas" target="_blank">Hyperas</a>
+              and <a href="https://github.com/pfnet/optuna">Optuna</a> that are framework in Python for Hyper
+              parameter search.
+              <div class="row">
+                <div class="column">
+                  <img src="img/td_training_curves.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <img src="img/td_cm.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+              <h5>Model Evaluation</h5>
+              <span class="marker">Subjectively evaluating our models was difficult</span>. The best that we could
+              say was that we did a pretty
+              <span class="marker">good job of determining the low risk</span> of getting a ticket. It is much more
+              <span class="marker">important for us to have accurate LOW risks</span>.
+              For example, if you park expecting a low risk and you end up getting a ticket, it will be a much worse
+              <span class="marker">user experience</span> than if you went in expecting a ticket and got none!
+              <br><br>
+              We did chase down a parking ticket enforcer and asked for his opinion and he gave us some streets that
+              are common of getting a parking ticket. Our predictions from XGBoost were pretty good.
+              <span class="marker">Due to model's performance and inference time, 28.19 [ms], we choose XGBoost
+                model</span>.<br><br>
+              <h5>Application Archtecture</h5>
+              <strong>Backend</strong><br>
+              &ensp;&ensp;- Server: Flask running behind Gunicorn, and NGinx<br>
+              &ensp;&ensp;- Custom built location to street matching engine<br>
+              &ensp;&ensp;- XGBoost<br>
+              &ensp;&ensp;- Deployment: DigitalOcean Droplet<br>
+              &ensp;&ensp;&ensp;&ensp;- 1 vCPU<br>
+              &ensp;&ensp;&ensp;&ensp;- 1 GB RAM<br>
+              &ensp;&ensp;&ensp;&ensp;- 24 GB SSD<br>
+              &ensp;&ensp;&ensp;&ensp;- ($5 a month)<br>
+              <strong>Client Side</strong><br>
+              &ensp;&ensp;- Website: HTML and Javascript<br>
+              &ensp;&ensp;- Map: LeafletJS serving OpenStreetMap (No google!)<br>
+              &ensp;&ensp;- Deployment: Github Pages<br>
+              &ensp;&ensp;&ensp;&ensp;- Free<br><br>
+              <h5>How did we work as a team</h5><br>
+              Since we lived a little bit far to work together in person, it was <span class="marker">important that
+                we had a good system
+                to work together</span>.<br>
+              We started by working together by sourcing our data, evaluating what we have and creating a merged
+              base dataset.<br>
+              In order to streamline our approach, we then <span class="marker">split up our roles to focus on
+                primary areas</span>, building
+              machine learning models was my focus and Paul was working on development.<br>
+              Afterwards, we <span class="marker">did a knowledge transfer</span> to fill each other on the gaps
+              that we might have missed out
+              on.<br><br>
+
+              We did loosely<span class="marker"> work in the agile way</span>, changing things as we needed.
+              We made sure we reviewed each others work to the standards that we set out for ourselves.
+              To do so we used <span class="marker">Trello to manage our tasks</span>. Here are the some of the tags
+              we had in our channel on
+              Trello.<br>
+              &ensp;&ensp;- Product backlog<br>
+              &ensp;&ensp;- Current sprint<br>
+              &ensp;&ensp;- Doing<br>
+              &ensp;&ensp;- Review<br>
+              &ensp;&ensp;- Blocked<br>
+              &ensp;&ensp;- Done<br>
+              &ensp;&ensp;&ensp;&ensp;- Nothing moves here unless it is reviewed by the other<br>
+
+              We also has a daily meeting.<br><br>
+              <h5>Obstacles</h5>
+              -&ensp;&ensp;Target variable creation
+              As I mentioned above, we did not have a target variable, the probability or the likelihood of getting
+              a parking ticket.
+              We <span class="marker">created one by using three datasets</span>, one that contained the information
+              of parking tickets issued,
+              second that had the traffic counts on each street including some private streets, and third that had
+              almost all of the street name in the Vancouver area.<br>
+              It was <span class="marker">important for us to define what we mean by “Risk".</span><br>
+              It was a fairly arbitrary term.
+              We had decided to use the number of tickets given, divided by the amount of traffic on the street.
+              In this way, <span class="marker">we defined risk RELATIVE to the risk of other streets</span>.
+              The formula for estimating the probability for each block on each street was as follows:<br><br>
+              <div class="text-center">
+                <a href="https://www.codecogs.com/eqnedit.php?latex=\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
+                  target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?\textbf{The&space;number&space;of&space;tickets&space;/&space;The&space;number&space;of&space;traffic&space;counts}"
+                    title="\textbf{The number of tickets / The number of traffic counts}" /></a>
+              </div><br>
+
+              In order to do the calculation, we needed to make sure that <span class="marker">each street</span> in
+              the parking ticket dataset
+              and traffic counts dataset were <span class="marker">the same format</span> to marge the two datasets
+              with the streets as the key.<br>
+              Here is an example of a street we needed to clean up: <span class="marker">"WEST GEORGIA"</span> and
+              <span class="marker">"GEORGIA W"</span><br>
+              So we used a Python framework, <a href="https://github.com/seatgeek/fuzzywuzzy"
+                target="_blank">fuzzywazzy</a>, to clean up the streets name.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- A project section done -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="m-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+    <div class="w-100">
+      <h2 class="mb-5">Education</h2>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="resume-content">
+          <h3 class="mb-0">7 Gate Academy</h3>
+          <div class="subheading mb-3">Machine Learning Bootcamp&ensp;<a href="https://7gate.academy/"
+              target="_blank">[link]</a></div>
+          <div>I was <span class="marker">selected</span> the last 7 students who allowed to join the class <span
+              class="marker">from 120
+              candidates</span> in selection
+            process.
             <p></p>
+            <span class="marker">Curriculum</span><br>
+            8 weeks, 3.5 hours * 4 days/week.<br>
+            1st week: Data Engineering, Modeling, BigData (ETL, DWH, Airflow, Spark)<br>
+            2nd week: Data Visualization (Matplotlib), Data Processing (Duplicated rows, Missing Values, Outliers,
+            Multiple Value Ranges, Non-numerical Data)<br>
+            3rd week: AutoML (Google Cloud, Microsoft Azure), ML Library (sklearn)<br>
+            4th week: MVP, Interpretability, Problem-solving, ML Technics (Bias, Variance, Regularization, etc)<br>
+            5th week: Planning and estimating the work, Data Science Scrum<br>
+            6th week: Team Project<br>
+            7th week: Team Project<br>
+            8th week: Presentation about the team project, <span class="marker"><a href="https://ticket-dodger.com/"
+                target="_blank">Ticket-Dodger</span></a>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jul 2019 - Sep 2019</span>
-          </div>
+          <p></p>
         </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Institute of Technology Development of Canada</h3>
-            <div class="subheading mb-3">Computer Science Diploma&ensp;<a href="https://itdcanada.ca/"
-                target="_blank">[link]</a>&nbsp;&nbsp;<a href="docs/Kohei_Suzuki-Final_Transcript.pdf"
-                target="_blank">[See
-                transcription]</a></div>
-            <p>The course was 2 years diploma in Open Source Programming which contains one year in class and the
-              secound year for Coop program. I worked as a Machine Learning Developer at <a href="#experience">Singular
-                Software
-                Inc</a>.</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jul 2017 - Jun 2019</span>
-          </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">Jul 2019 - Sep 2019</span>
         </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Brain Station Vancouver</h3>
-            <div class="subheading mb-3">Data Science Bootcamp&ensp;<a href="https://brainstation.io/campus/vancouver"
-                target="_blank">[link]</a>&nbsp;&nbsp;<a href="docs/BrainStation_Certificate.pdf" target="_blank">[See
-                certificate]</a></div>
-            <div>
-              <span class="marker">Curriculum</span><br>
-              -&ensp;UNIT 1 Python Programming<br>
-              &ensp;&ensp;Programming Fundamentals, Pandas, Python Packages<br><br>
-              -&ensp;UNIT 2 Working with Data<br>
-              &ensp;&ensp;Importing, Cleaning, Sampling<br><br>
-              -&ensp;UNIT 3 Data Visualization<br>
-              &ensp;&ensp;Matplotlib, Bokeh, Model Visualizations<br><br>
-              -&ensp;UNIT 4 Numerical Models<br>
-              &ensp;&ensp;Linear Regression, Polynomial Regression<br><br>
-              -&ensp;UNIT 5 Classification Models<br>
-              &ensp;&ensp;Logistic Regression, Naive Bayes, Decision Trees<br><br>
-              -&ensp;UNIT 6 Model Validation<br>
-              &ensp;&ensp;Distribution Fitting, Testing Goodness of Fit, Training Models<br><br>
-              -&ensp;UNIT 7 Machine Learning<br>
-              &ensp;&ensp;Intro to Neural Networks, Intro to Random Forests<br><br>
-              -&ensp;UNIT 8 Presenting Data<br>
-              &ensp;&ensp;Storytelling with Data, Project Presentation<br><br>
-            </div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Apr 2018 - Jun 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Tokyo City University</h3>
-            <div class="subheading mb-3">Bachelor Degree in Computer Science&ensp;<a
-                href="https://www.tcu.ac.jp/english/" target="_blank">[link]</a></div>
-            <p>Matriculated</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Apr 2012 - Apr 2013</span>
-          </div>
-        </div>
-
       </div>
-    </section>
 
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="achieves">
-      <div class="w-100">
-        <h2 class="mb-5">ACHIEVEMENTS</h2>
-
-        <div class="subheading mb-3">Certificate</div>
-        <ul class="fa-ul mb-5">
-          <li>
-            <p>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Mar 2020 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/P4KA5VXXY6CE"
-                target="_blank"><span class="marker">Reinforcement Learning Specialization</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Dec 2019 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/MXHY2B4T23S3"
-                target="_blank"><span class="marker">TensorFlow
-                  in Practice Specialization</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Dec 2019 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/92CESS2KFPEU"
-                target="_blank"><span class="marker">Sequences, Time Series and Prediction</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Dec 2019 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/E2PF6N8VKK98"
-                target="_blank"><span class="marker">Natural Language Processing in TensorFlow</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Nov 2019 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/DWCLUAYRJH8J"
-                target="_blank"><span class="marker">Convolutional Neural Networks in TensorFlow</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Nov 2019 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/CCTDX6N6STEN"
-                target="_blank"><span class="marker">Introduction to TensorFlow for Artificial Intelligence, Machine
-                  Learning, and Deep Learning</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Nov 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/3S2BGW2KUBM2"
-                target="_blank"><span class="marker">Databases and SQL for Data Science</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Oct 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/9F4LMN3HL9K7"
-                target="_blank"><span class="marker">Deep Learning Specialization</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Oct 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/7DGBYZQ5YKRW"
-                target="_blank"><span class="marker">Sequence Models</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Sep 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/KCACUXHRQTPP"
-                target="_blank"><span class="marker">Convolutional Neural Networks</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Sep 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/FLZN7UU4W5A4"
-                target="_blank"><span class="marker">Improving Deep Neural Networks: Hyperparameter tuning,
-                  Regularization and Optimization</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Sep 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/CRXVU8XTTWG4"
-                target="_blank"><span class="marker">Neural Networks and Deep Learning</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Sep 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/4JF7TPHU825V"
-                target="_blank"><span class="marker">Structuring Machine Learning Projects</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            <div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Sep 2018 - No Expiration Date</span>
-              </div>
-              -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/58499VJ8U274"
-                target="_blank"><span class="marker">Machine Learning</span></a><br>
-              &ensp;&ensp;Organization: Coursera<br>
-            </div>
-            </p>
-          </li>
-        </ul>
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+        <div class="resume-content">
+          <h3 class="mb-0">Institute of Technology Development of Canada</h3>
+          <div class="subheading mb-3">Computer Science Diploma&ensp;<a href="https://itdcanada.ca/"
+              target="_blank">[link]</a>&nbsp;&nbsp;<a href="docs/Kohei_Suzuki-Final_Transcript.pdf"
+              target="_blank">[See
+              transcription]</a></div>
+          <p>The course was 2 years diploma in Open Source Programming which contains one year in class and the
+            secound year for Coop program. I worked as a Machine Learning Developer at <a href="#experience">Singular
+              Software
+              Inc</a>.</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">Jul 2017 - Jun 2019</span>
+        </div>
       </div>
-    </section>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+        <div class="resume-content">
+          <h3 class="mb-0">Brain Station Vancouver</h3>
+          <div class="subheading mb-3">Data Science Bootcamp&ensp;<a href="https://brainstation.io/campus/vancouver"
+              target="_blank">[link]</a>&nbsp;&nbsp;<a href="docs/BrainStation_Certificate.pdf" target="_blank">[See
+              certificate]</a></div>
+          <div>
+            <span class="marker">Curriculum</span><br>
+            -&ensp;UNIT 1 Python Programming<br>
+            &ensp;&ensp;Programming Fundamentals, Pandas, Python Packages<br><br>
+            -&ensp;UNIT 2 Working with Data<br>
+            &ensp;&ensp;Importing, Cleaning, Sampling<br><br>
+            -&ensp;UNIT 3 Data Visualization<br>
+            &ensp;&ensp;Matplotlib, Bokeh, Model Visualizations<br><br>
+            -&ensp;UNIT 4 Numerical Models<br>
+            &ensp;&ensp;Linear Regression, Polynomial Regression<br><br>
+            -&ensp;UNIT 5 Classification Models<br>
+            &ensp;&ensp;Logistic Regression, Naive Bayes, Decision Trees<br><br>
+            -&ensp;UNIT 6 Model Validation<br>
+            &ensp;&ensp;Distribution Fitting, Testing Goodness of Fit, Training Models<br><br>
+            -&ensp;UNIT 7 Machine Learning<br>
+            &ensp;&ensp;Intro to Neural Networks, Intro to Random Forests<br><br>
+            -&ensp;UNIT 8 Presenting Data<br>
+            &ensp;&ensp;Storytelling with Data, Project Presentation<br><br>
+          </div>
+          <p></p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">Apr 2018 - Jun 2018</span>
+        </div>
+      </div>
+
+      <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+        <div class="resume-content">
+          <h3 class="mb-0">Tokyo City University</h3>
+          <div class="subheading mb-3">Bachelor Degree in Computer Science&ensp;<a href="https://www.tcu.ac.jp/english/"
+              target="_blank">[link]</a></div>
+          <p>Matriculated</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">Apr 2012 - Apr 2013</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="m-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="achieves">
+    <div class="w-100">
+      <h2 class="mb-5">ACHIEVEMENTS</h2>
+
+      <div class="subheading mb-3">Certificate</div>
+      <ul class="fa-ul mb-5">
+        <li>
+          <p>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Mar 2020 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/P4KA5VXXY6CE"
+              target="_blank"><span class="marker">Reinforcement Learning Specialization</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Dec 2019 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/MXHY2B4T23S3"
+              target="_blank"><span class="marker">TensorFlow
+                in Practice Specialization</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Dec 2019 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/92CESS2KFPEU" target="_blank"><span
+                class="marker">Sequences, Time Series and Prediction</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Dec 2019 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/E2PF6N8VKK98" target="_blank"><span
+                class="marker">Natural Language Processing in TensorFlow</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Nov 2019 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/DWCLUAYRJH8J" target="_blank"><span
+                class="marker">Convolutional Neural Networks in TensorFlow</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Nov 2019 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/CCTDX6N6STEN" target="_blank"><span
+                class="marker">Introduction to TensorFlow for Artificial Intelligence, Machine
+                Learning, and Deep Learning</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Nov 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/3S2BGW2KUBM2" target="_blank"><span
+                class="marker">Databases and SQL for Data Science</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Oct 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/specialization/9F4LMN3HL9K7"
+              target="_blank"><span class="marker">Deep Learning Specialization</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Oct 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/7DGBYZQ5YKRW" target="_blank"><span
+                class="marker">Sequence Models</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Sep 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/KCACUXHRQTPP" target="_blank"><span
+                class="marker">Convolutional Neural Networks</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Sep 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/FLZN7UU4W5A4" target="_blank"><span
+                class="marker">Improving Deep Neural Networks: Hyperparameter tuning,
+                Regularization and Optimization</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Sep 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/CRXVU8XTTWG4" target="_blank"><span
+                class="marker">Neural Networks and Deep Learning</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Sep 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/4JF7TPHU825V" target="_blank"><span
+                class="marker">Structuring Machine Learning Projects</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          <div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Sep 2018 - No Expiration Date</span>
+            </div>
+            -&ensp;<a href="https://www.coursera.org/account/accomplishments/verify/58499VJ8U274" target="_blank"><span
+                class="marker">Machine Learning</span></a><br>
+            &ensp;&ensp;Organization: Coursera<br>
+          </div>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   </div>
 
