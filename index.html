@@ -282,22 +282,46 @@
                 <span class="text-primary">Jan 2020 - Present</span>
               </div>
               <h3 class="card-title">Forex Trading System with Deep Reinforcement Learning</h3>
-              <p class="card-text">I loosely followed <a href="https://arxiv.org/pdf/1908.08036.pdf"
-                  target="_blank">this</a> paper,
-                Deep Reinforcement Learning for Foreign
-                Exchange Trading. What I mean by loosely is that I implemented their idea as the base and updated some
-                things which I will explain in the Obstacles section.<br><br>
-                <span class="marker">Before talking about what this project is</span> I will explain two methods,
-                <span class="marker">Gramian Angular Field (GAF)</span> and the <span class="marker">Sure-Fire
-                  arbitrage strategy</span>, that are used in this personal
-                project.<br><br>In this paper, they used <span class="marker">GAF</span>
-                to encode Time Series data into heatmap images that fed into ConvNet to capture hidden features.<br>
-                They used Deep Reinforcement Learning (DRL) model in order to optimize a trading strategy, the
-                Sure-Fire arbitrage strategy, which is a variant of the Martingale.<br><br>
-              <h5>The Sure-Fire starategy</h5><br>
+              <hr>
+              <h4>Overview</h4>
+              <p><span class="marker">This is an automated forex trading strategy by using the power of reinforcement
+                  learning which is a
+                  type of machine learning. The goal is to optimize a forex trading strategy and to make a profit with
+                  it
+                  on the real financial market while I am sleeping.</span> </p>
+
+              About this project can be separated into two sections, MVP and version 2.0.<br>
+              - <span class="marker">In MVP section</span>, I will introduce you what I had done and the result I got
+              from the first deep
+              reinforcement learning model.<br>
+              - <span class="marker">In version 2.0 section</span>, I will mention what I changed, especially
+              preprocessing in order to make a
+              better model and will show you improved results.
+              <hr>
+
+              <h4>MVP</h4>
+              First, I will list up key parts in MVP that I finished almost within a month and then I will add
+              explanation to each of them.<br><br>
+              <ol>
+                <li>SureFireStrategy</li>
+                <li>Gramian Angular Field</li>
+                <li>Data</li>
+                <li>Result</li>
+                <li>Deployment</li>
+              </ol>
+
+              <h5>1. SureFireStrategy</h5>
+              <p class="card-text">
+                I loosely followed <a href="https://arxiv.org/pdf/1908.08036.pdf" target="_blank">this</a> paper, Deep
+                Reinforcement Learning for Foreign Exchange Trading.</p>
+              In this paper, what they tried was that tried to optimize SureFireStrategy which is a variant of the
+              Martingale by using ConvNet as the agent in reinforcement learning in order to find patters in heatmap
+              images encoded from time series data by Gramian Angular Field (GAF) which I will talk about later.<br><br>
+              </p>
               <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                 <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i>
                 </div>
+                <h5>The Sure-Fire starategy</h5><br>
                 <p class="mb-0 mt-2 font-italic">
                 <div class="row">
                   <div class="column">
@@ -338,9 +362,14 @@
                 </footer>
               </blockquote>
               <br>
-              <h5>GAF encoding</h5>
-              On the left side, it shows close price in 5 minutes time frame with 12 window size.<br>
-              The other one is a heatmap image after encoded by using GAF.
+              <h5>2. Gramian Angular Field (GAF) </h5>
+              <p class="card-text">
+                On the left side, it shows price movement in 5 minutes time frame with 12 window size.
+                On the right image, it is an image encoded by GAF which represents the price movement on the left side
+                and is a sample of images that were fed into ConvNet and that were defined as the states in
+                reinforcement
+                learning. Each image had 4 channels that corresponded to Open, High, Low, and Close in a timeframe.
+              </p>
               <div class="row">
                 <div class="column">
                   <img src="img/close_example.png" class="img-fluid" alt="Responsive image">
@@ -349,69 +378,50 @@
                   <img src="img/gaf_example.png" class="img-fluid" alt="Responsive image">
                 </div>
               </div>
-              <h3>About this project</h3>
-              <img src="img/app_development_forex.png" class="img-fluid" alt="Responsive image">
-              This is a personal project to learn about Reinforcement Learning and to see if it is possible
-              to make profit with DRL in the Forex market.<br><br>
-              <h5>What comes into the DRL and what comes out from the DRL.</h5>
-              <span class="marker">What comes into DRL model</span> is the encoded images as the state.<br>
-              And <span class="marker">what comes out from DRL</span> as well as what DRL actions are Stop
-              Loss Take Profit (SLTP) pips,
-              order type, and max level limit.<br><br>
-              -&ensp;&ensp;<span class="marker">SLTP pips</span>: Which is the size from the entry price to take
-              profit and stop loss price in
-              pips.<br>
-              -&ensp;&ensp;<span class="marker">Order type</span>: DRL model chooses one of the order types from
-              buy, sell, or stay for each
-              given state.<br>
-              -&ensp;&ensp;<span class="marker">Max level limit</span>: How many times we place a reverse
-              order.<br><br>
-              <h5>MVP</h5>
-              I had created <span class="marker">MVP within a month</span> which runs on AWS EC2 where <span
-                class="marker">everything is automated</span>.
-              What the MVP does is that it runs on live data and places order on live data by using API provided
-              from Oanda, which is a broker I use.<br><br>
-              <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                <p class="mb-0 mt-2 font-italic">
-                  Here is <span class="marker">detailes of MVP</span>. <span class="marker">Everything
-                    below is
-                    automated</span>.<br>
-                  - Every Monday after the Oceania market opens (at night on Sunday (GMT)), the server is booted. I
-                  set this up by using <span class="marker">CloudWatch</span> on AWS.<br>
-                  - Run bash shell when boot to open TMUX with a session in which the main Python script runs.<br>
-                  - Gets the last 2 hours data, Open, High, Low, and Close and converts to a heatmap image by using
-                  GAF.<br>
-                  - DRL model decides the order type, buy, sell, or stay, SLTP pips which is the size for each of
-                  Stop-Loss and Take-Profit, and Max limit level, how many times it places a reverse order. Keep
-                  doing
-                  this until the New York market close on Friday.<br>
-                  - After the NY market close every Friday, I set up the server shut down in order not to waste
-                  money on weekends.<br>
-                  - Additionally, I implemented a feature that sends me a push message to my LINE account every day
-                  when the NY market close with trading results of each day.<br>
-                </p>
-              </blockquote>
               <br>
-              <h5>Obstacles</h5>
-              -&ensp;&ensp;<span class="marker">One of the biggest things</span> which I was stuck on was that DRL
-              model <span class="marker">did not
-                make any profit</span> when it was run on live data even though I could reproduce similar result
-              with the one in the original paper. This
-              took me a while to figure out but eventually it turned out that <span class="marker">there was a
-                difference</span> between the data I
-              used for training and the live data.<br>
-              The training data was CSV format which columns for DateTime, Open, High, Low, Close, and Volume and
-              each row corresponded to each time frame.
-              The problem was that <span class="marker">each row</span> in the training data is <span
-                class="marker">just a result of price movements in a
-                time frame</span>. For example, if the time frame is 5
-              minutes, each row is corresponding to the result of movings of price during the 5 minutes.<br>
-              But in live data, we see the price is moving for 5 minutes. So <span class="marker">the training data
-                was not able to
-                describe the price movements in each time frame</span>.<br>
-              <span class="marker">The way I solved</span> this problem was <span class="marker">using smaller time
-                frame data</span> to
-              describe price movements.<br>
+              <h5>3. Data</h5>
+              How I got forex data was that I used a <a
+                href="https://oanda-api-v20.readthedocs.io/en/latest/installation.html">python API</a> provided by OANDA
+              which is a broker that I use. I was able to gather data in any major timeframe I wanted.<br><br>
+              <h5>4. Result</h5>
+              The below image is a result plot of training.
+              From this plot what I could say were:
+              <ul>
+                <li>Obviously, the model had not been trained well</li>
+                <li>Exploration and exploitation problem</li>
+                <li>SureFireStrategy might not fit</li>
+                <li>Data quality might be not good enough</li>
+              </ul>
+              <span class="marker">How I fixed those problems is mentioned in the version 2.0 section.</span>
+              <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
+              <h5>5. Deployment</h5>
+              Though I had not got any model that might be able to make a profit on the real market, I deployed the
+              model on AWS EC2 and made all the process needed automated by defining operations in a bash script. I also
+              set up CloudWatch to turn on and off the server not to waste money on weekends when the forex market
+              close.
+              <hr>
+              <h4>Version 2.0</h4>
+              I have been working on the version 2.0 and its differences from the MVP are,
+              <ol>
+                <li>Trading strategy</li>
+                <li>Definition of the state</li>
+                <li>Data</li>
+                <li>Result</li>
+                <li>Further work</li>
+              </ol>
+              <h5>1. Trading strategy</h5>
+              I can see the strength of the SureFire Strategy only when I can bet double continuously over and over
+              again. Due to my bankroll size, I was not able to place order like that. So I set a certain pip size to
+              exit the market instead of using the SureFireStrategy.<br><br>
+              <h5>2. Definition of the state</h5>
+              In MVP, I used encoded heatmap images as a state but this might cause the result that the model had not
+              been trained well, meaning that ConvNet could not find any patters in the images. So I switched the way to
+              define the state to use technical indicators as features that describe the state.<br><br>
+              <h5>3. Data</h5>
+              In MVP, I used data that OANDA provides, but the data actually had a considerable amount of nans that I
+              filled up. And the paper I followed did training on data that had timeframe instead of using bid-ask price
+              so that I could not perfectly reproduce the actual price movement that is happening in the real market. So
+              I started collecting bid-ask data in real-time that is used to train models in version 2.0.
               <div class="row">
                 <div class="column">
                   <img src="img/price_movings_5min.png" class="img-fluid" alt="Responsive image">
@@ -421,149 +431,94 @@
                 </div>
               </div>
               <br>
-              <br>
-              -&ensp;&ensp;<span class="marker">DRL model always took STAY as an action after 600
-                episodes</span>.&ensp;&ensp;&ensp;&ensp;<i>Updated: 2020/02/23</i><br>
-              Here is the result of training DRL model for 900
-              episodes.
-              <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
-              The result shows basically three facts.<br>
-              &ensp;&ensp;&ensp;&ensp;&ensp;- The more training goes the
-              more trades happened.<br>
-              &ensp;&ensp;&ensp;&ensp;&ensp;- The model's performance has
-              been improved as training
-              goes.<br>
-              &ensp;&ensp;&ensp;&ensp;&ensp;<span class="marker">- DRL
-                model always took STAY as an
-                action</span>. <span class="marker">(Exploration problem)</span><br>
-              <span class="marker">Firstly, I tuned up some parameters for exploration.</span><br>
-              <span class="marker">In the original paper</span>, they had implemented only <span
-                class="marker">BUY</span>
-              and <span class="marker">SELL</span> for the order type but <span class="marker">STAY</span>.<br>After
-              running the
-              base model on live data that I implemented
-              exactly the same as the one in the original paper, I figured out there were timings when it shouldn't
-              have placed orders, instead, it should have just STAY.<br>
-              So I had added STAY to the base in which DRL was able to take as
-              an action.<br>
-              But the reason why DRL took STAY after certain episodes could be
-              that <span class="marker">the model might figure out that
-                always taking STAY as an action would be a way to maximize the total reward</span>. Whatsmore it had
-              stopped <span class="marker">exploring</span>.
-              <br>
-              <br>
-              So I <span class="marker">defined a new reward function for STAY action</span> by using a kind
-              of <span class="marker">Supervised approach</span>.<br>
-              I defined where the DRL model should STAY and not. For example, if the
-              price will move directly
-              Take-Profit line directly in the next 10 minutes, it shouldn't stay.<br>
-              The new reward function for STAY actions that shouldn't have STAY
-              is as follows:<br><br>
-              <div class="text-center">
-                <a href="https://www.codecogs.com/eqnedit.php?latex=\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
-                  target="_blank"><img
-                    src="https://latex.codecogs.com/gif.latex?\textrm{Reward}&space;=&space;\sqrt{\frac{\textrm{Expected&space;profit}}{\textrm{Base&space;pip&space;size}}}"
-                    title="\textrm{Reward} = \sqrt{\frac{\textrm{Expected profit}}{\textrm{Base pip size}}}" /></a><br>
-              </div><br>
+              <h5>4.Result of backtesting</h5>
+              <div class="row">
+                <div class="column">
+                  <span>All the entry points for <span class="marker">short</span> from <span
+                      class="marker">2020/May/18</span> to <span class="marker">2020/May/23</span>
+                    (green: made profit, red: loss)</span>
+                  <img src="img/bk_week4_short_profit_g_lost_r.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <span>All the entry points for <span class="marker">long</span> from <span
+                      class="marker">2020/May/18</span> to <span class="marker">2020/May/23</span>
+                    (green: made profit, red: loss)</span>
+                  <img src="img/bk_week4_long_profit_g_lost_r.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
               <hr>
-              For example, if we buy $1 USD at 109.050 JPY. Then our target price
-              could be, let's say, 109.080 JPY. So here
-              we would want to get 3 pips. Expected profit would be calculated by (109.080 - 109.050). And the base
-              pip size I use is 0.001 in USDJPY currency pair.
-              So the reward would be 5.4772.
+              <div class="row">
+                <div class="column">
+                  <span>All the entry points for <span class="marker">short</span> from <span
+                      class="marker">2020/May/25</span> to <span class="marker">2020/May/30</span>
+                    (green: made profit, red: loss)</span>
+                  <img src="img/bk_week5_short_profit_g_lost_r.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="column">
+                  <span>All the entry points for <span class="marker">long</span> from <span
+                      class="marker">2020/May/25</span> to <span class="marker">2020/May/30</span>
+                    (green: made profit, red: loss)</span>
+                  <img src="img/bk_week5_long_profit_g_lost_r.png" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
               <hr>
-              <span class="marker">Otherwise, the reward would be 0</span>.<br>
-
-              <img src="img/result_ep0_ep1000_new_reward_exploration_window48.png" class="img-fluid"
-                alt="Responsive image">
-              This is the result of the training with the new reward function for STAY and updated
-              hyperparameters.<br>
-              As you can see, <span class="marker">successfully avoided the model taking the same actions</span>
-              after certain episodes. But <span class="marker">the
-                model's performance is not good</span> because <span class="marker">probably I set exploration
-                parameter too high and the model did not try exploiting enough</span>.<br>
-              I will talk about how to improve the model's performance in the next section, <span class="marker">"Trying
-                to improve the
-                DRL"</span>.<br><br>
-
-              <h5>Trying to Improve the DRL</h5>
-              I have been trying to improve the DRL model by changing the archtecture of CNN and tuning
-              hyperparameters for the PPO method.<br><br>
-              - <span class="marker">Different CNN archtecture</span><br>
-              The first archtecture I used was the same as one that the author used.
-              For the sake of testing, I created a CNN model on Colab to see how well the archtecture can classify
-              given images encoded by GAF into 2 categories, SHOULD STAY or not.
-              Here are the results of the old version and new version.<br><br>
               <table width="100%" cellpadding="10" border="1">
                 <tr>
                   <th></th>
-                  <th>Old archtecture</th>
-                  <th>New archtecture</th>
+                  <th>2020/May/18 - 2020/May/23</th>
+                  <th>2020/May/25 - 2020/May/30</th>
                 </tr>
                 <tr>
-                  <td>Confusion matrix</td>
-                  <td><img src="img/old_cnn_archtecture.png" class="img-fluid" alt="Responsive image"></td>
-                  <td><img src="img/new_cnn_archtecture2.png" class="img-fluid" alt="Responsive image"></td>
+                  <td>Number of trading</td>
+                  <td>
+                    117
+                  </td>
+                  <td>
+                    105
+                  </td>
                 </tr>
                 <tr>
-                  <td>Precision</td>
-                  <td>0.8805369127516779</td>
-                  <td><span class="marker">0.8877742946708463</span></td>
+                  <td>Number of winning</td>
+                  <td>86</td>
+                  <td>79</td>
                 </tr>
                 <tr>
-                  <td>Recall</td>
-                  <td>0.8298545224541429</td>
-                  <td><span class="marker">0.8956356736242884</span></td>
+                  <td>Number of losing</td>
+                  <td>31</td>
+                  <td>26</td>
                 </tr>
                 <tr>
-                  <td>F1</td>
-                  <td>0.8544448062520352</td>
-                  <td><span class="marker">0.8916876574307304</span></td>
+                  <td>Winning ratio</td>
+                  <td>0.735</td>
+                  <td>0.752</td>
+                </tr>
+                <tr>
+                  <td>Profit Factor</td>
+                  <td>1.515</td>
+                  <td>1.820</td>
+                </tr>
+                <tr>
+                  <td>Max DrawDown</td>
+                  <td>-40pips</td>
+                  <td>-50pips</td>
+                </tr>
+                <tr>
+                  <td>Net Profit</td>
+                  <td>217.7pips</td>
+                  <td>225.0pips</td>
                 </tr>
               </table>
               <br>
-              I added MaxPooling layers following Conv layers and changed the activation function to tanh from relu
-              in Conv lasyers and a
-              Dense layer.
-              <br><br>
-              - <span class="marker">Tuning hyperparameters</span><br>
-              I have spent some time tuning hyperparameters. What I have found so far is that <span class="marker">the
-                epsilon for action
-                exploration parameter</span> is pretty important because there is a <span class="marker">concept of
-                exploration and
-                exploitation
-                trade-off</span>.<br><br>
-
-              <span class="marker">* Training curve will be shown once training gets done.</span>
-              <br>
-              <br>
-              <h5>Worth to try</h5>
-              - Define a new state: The way I use to define state is that encoding Open, High, Low, Close by using
-              GAF and stack them up to create 4 channel image.
-              I believe that having technical indicators could help to improve model's performance.
-              Here is my idea. Create 4 images whose size is (window size, window size, 4), then tiled them up as
-              a
-              new state.
-              <div class="row">
-                <div class="column">
-                  <img src="img/img1.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <div class="column">
-                  <img src="img/img2.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <div class="column">
-                  <img src="img/img3.png" class="img-fluid" alt="Responsive image">
-                </div>
-              </div>
-              <div class="row">
-                <div class="column">
-                  <img src="img/img4.png" class="img-fluid" alt="Responsive image">
-                </div>
-                <div class="column">
-                  <img src="img/new_state.png" class="img-fluid" alt="Responsive image">
-                </div>
-              </div>
-              </p>
+              <h5>Further work</h5>
+              <ol>
+                <li>Use heatmap images as extra features.</li>
+                <li>Use Fourier transform to approximate the price movement and calculate derivatives as features that
+                  may be thought of the strength of the current trend.</li>
+                <li>Implement algorithmic trading strategies and use their outputs as features with one-hot encoding.
+                </li>
+                <li>Update the reward function which is one of the crucial parts in reinforcement learning.</li>
+                <li>Hyperparameter tuning and feature section.</li>
+              </ol>
             </div>
           </div>
         </div>
