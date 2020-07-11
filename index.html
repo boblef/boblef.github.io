@@ -129,7 +129,7 @@
         </h1>
         <div class="subheading mb-5">email address:
           <a href="mailto:koheisuzuki808@gmail.com">koheisuzuki808@gmail.com</a>&emsp;|&emsp;
-          <a href="docs/koheisuzuki_resume2020_ver1.2_ML.pdf" target="_blank" id="resume">Download CV</a>
+          <a href="docs/koheisuzuki_resume2020_ML.pdf" target="_blank" id="resume">Download CV</a>
         </div>
         <blockquote class="blockquote blockquote-custom bg-white p-4 shadow rounded">
           <p class="mb-2 mt-2 font-italic">
@@ -275,6 +275,231 @@
       <h2 class="mb-5">Projects</h2>
       <div class="row">
         <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <div class=" card-body">
+              <div class="resume-date text-md-right">
+                <span class="text-primary">Jun 2020 - Jul 2020</span>
+              </div>
+              <h3 class="card-title">Sudoku Solver on Quantum Computers<a href="https://github.com/boblef/sudoku_solver"
+                  target="_blank">&ensp;[github]</a></h3>
+              <p class="card-text">
+                <hr>
+              <h5>About the Sudoku solver</h5>
+
+              This is a Flask app in which it detects Sudoku puzzles that we show to the webcam by using OpenCV and a
+              CNN model which is for recognizing each digit.<br> Once it detected a puzzle, then we formulate a
+              Quadratic
+              Binary Model (QBM) and an objective function that we want to minimize in order to find the solution by
+              using D-Wave's quantum computers.<br>
+              <br>
+              The purpose of this project:
+              <ul>
+                <li>Learn the annealing way quantum computers which are good at solving particular problems such as
+                  optimization problems.</li>
+                <li>Get hands dirty with OpenCV.</li>
+                <li>Learn testing and how to use CI tools such as CircleCI.</li>
+                <li>Learn how to use Docker.</li>
+              </ul>
+              <hr>
+              <h5>Preprocessing steps</h5>
+
+              Here, the workflow from capturing a sudoku puzzle to findind a solution will be descrived.<br>
+              I will go with images from left to right and top to bottom so you will can easily imagine what is going on
+              the inside.<br><br>
+
+              <div class="table-responsive">
+                <table width="100%" cellpadding="10" class="table">
+                  <tr>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/gray.jpg" class="img-fluid" alt="Responsive image">
+                      <p>1. Convert a frame to gray scale.</p>
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/binary.jpg" class="img-fluid" alt="Responsive image">
+                      <p>2. Applies an adaptive threshold to an array.</p>
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/blurred.jpg" class="img-fluid" alt="Responsive image">
+                      <p>3. Blurs an image using the median filter.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center; vertical-align: middle;">
+                      <img src="img/sudoku/frame.jpg" class="img-fluid" alt="Responsive image">
+                      <p>4. Detect the puzzle.</p>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle;">
+                      <img src="img/sudoku/mask.jpg" class="img-fluid" alt="Responsive image">
+                      <p>5. Create a mask.</p>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle;">
+                      <img src="img/sudoku/src.jpg" class="img-fluid" alt="Responsive image">
+                      <p>6. Capture the grid.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/mask_x.jpg" class="img-fluid" alt="Responsive image">
+                      <p>7. Detect the vertical lines.</p>
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/mask_y.jpg" class="img-fluid" alt="Responsive image">
+                      <p>8. Detect the horizontal lines.</p>
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/crossing.jpg" class="img-fluid" alt="Responsive image">
+                      <p>9. Calculating the points where the vertical lines and horizontal lines cross.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <i><strong>The samples of digits cropped and fed into a CNN model.</strong></i><br>
+              <div class="table-responsive">
+                <table width="100%" cellpadding="10">
+                  <tr>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_1.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_2.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_3.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_4.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_5.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_6.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_7.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_8.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                    <td style="text-align: center;">
+                      <img src="img/sudoku/digit_9.png" class="img-fluid" alt="Responsive image">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <br>
+              <p>Then we create a 2D Numpy array which represents the sudoku puzzle that the user showed and which is
+                created based on recognition of a CNN model, which is trained on <a
+                  href="https://computervisiononline.com/dataset/1105138682">Chars74K</a>, for each cell in the grid.
+              </p>
+              <br>
+              <p>The last thing the user has to do is that fix the numbers that are misclassified by the CNN model by
+                filling the corresponding text box with a correct one.</p>
+              <div class="column">
+                <img src="img/sudoku/captured_puzzle.png" class="img-fluid" alt="Responsive image">
+              </div>
+              <hr>
+              <h5>Formulate our problem for D-Wave's quantum computers.</h5>
+              <ul>
+                <li>We need to formulate problems we want to solve as a <span class="marker">Binary Quadratic Model
+                    (BQM)</span>.</li>
+                <li>In order to solve a BQM, we need to define an objective function which would be <span
+                    class="marker">Quadratic Unstractured Binary Optimization (QUBO)</span> or <span
+                    class="marker">Ising</span>. By finding the values that
+                  minimize the objective function, we solve the BQM.</li>
+                <li>A BQM equation has two parts:
+                  Objective: What we are trying to minimize
+                  Constraints: Rules we need to satisfy
+                </li>
+              </ul><br>
+              <h5>BQM Development Process</h5>
+              <ul>
+                <li>Convert our objective and constraints to math statements with binary variables if we picked QUBO as
+                  an objective function or -1/+1 variables if Ising.</li>
+                <li>Make our objective and constraints "QUBO appropreate".
+                  <ul>
+                    <li>Objective is a minimizing function</li>
+                    <li>Constraints are satisfied at thier minimum values</li>
+                  </ul>
+                </li>
+              </ul>
+              <i><strong>Binary Quadratic Model</strong></i><br>
+              <div class="text-center container">
+                <div class="col-xs-6">
+                  <!-- Create latex here: https://www.codecogs.com/latex/eqneditor.php -->
+                  <img src="img/sudoku/bqm.gif" class="img-fluid">
+                </div>
+              </div>
+              <p>The coefficients <a href="https://www.codecogs.com/eqnedit.php?latex=a_{i}" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?a_{i}" title="a_{i}" /></a> and <a
+                  href="https://www.codecogs.com/eqnedit.php?latex=b_{i,&space;j}" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?b_{i,&space;j}" title="b_{i, j}" /></a> are constant
+                numbers
+                we choose to define our problem, as is the constant
+                term <a href="https://www.codecogs.com/eqnedit.php?latex=c" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?c" title="c" /></a>. <br>
+                The binary variables <a href="https://www.codecogs.com/eqnedit.php?latex=v_{i}" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?v_{i}" title="v_{i}" /></a> and <a
+                  href="https://www.codecogs.com/eqnedit.php?latex=v_{j}" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?v_{j}" title="v_{j}" /></a> are
+                the values that we are looking for to solve our problem.<br>
+                The best solution for these variables is the value for each <a
+                  href="https://www.codecogs.com/eqnedit.php?latex=v_{i}" target="_blank"><img
+                    src="https://latex.codecogs.com/gif.latex?v_{i}" title="v_{i}" /></a> that produces the smallest
+                value for
+                the overall expression.<br> Searching for the variables that minimize an expression is called an
+                “argmin”
+                in mathematics.</p>
+              <ul>
+                <li><span class="marker">Linear Terms:</span><br>
+                  The first summation, <a href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;a_{i}v_{i}"
+                    target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum&space;a_{i}v_{i}"
+                      title="\sum a_{i}v_{i}" /></a>, contains linear terms, with each having just one <span
+                    class="marker">binary</span> variable.</li>
+                <li><span class="marker">Quadratic Terms:</span><br>
+                  The second summation, <a
+                    href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;\sum&space;b_{i,&space;j}v_{i}v_{j}"
+                    target="_blank"><img
+                      src="https://latex.codecogs.com/gif.latex?\sum&space;\sum&space;b_{i,&space;j}v_{i}v_{j}"
+                      title="\sum \sum b_{i, j}v_{i}v_{j}" /></a>, contains <span class="marker">quadratic</span> terms,
+                  with each term
+                  in the summation containing
+                  a product of two variables.</li>
+                <li><span class="marker">Constants:</span><br>
+                  In the general BQM form we may or may not include
+                  constants. Since we are looking for an argmin, any
+                  constant terms will not affect our final answer. However, it may be useful when interpreting the
+                  output
+                  from D-Wave solvers and samplers.</li>
+              </ul>
+              For more information about BQM, QUBO, and Ising, please visit <a
+                href="https://docs.dwavesys.com/docs/latest/c_pf_1.html?highlight=binary%20quadratic%20model">here</a>.
+              <br>
+              <hr>
+              <h5>Note</h5>
+              <ul>
+                <li>Though we use the D-Wave quantum computers to solve Sudoku puzzles which has a fascinating speed for
+                  the computation, many people access the computers so that we have to wait for a queue for using them.
+                  So
+                  the total process will take time but usually, it is done within a minute.</li>
+                <li>Sometimes the quantum computers can not find the solution for the given Sudoku puzzle especially for
+                  difficult ones since quantum computers run the calculation several times and pick up the best solution
+                  they found. In other words, it did not converge to an optimum of the objective function.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- A Project section done-->
+
+        <p>&ensp;</p>
+
+        <!-- A Project section start-->
         <div class="col-sm-12 mb-2">
           <div class="card">
             <div class="card-body">
@@ -777,12 +1002,12 @@
               In this way, <span class="marker">we defined risk RELATIVE to the risk of other streets</span>.
               The formula for estimating the probability for each block on each street was as follows:<br><br>
               <div class="text-center container">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <img src="img/CodeCogsEqn.gif" class="img-fluid">
-                  </div>
+                <div class="col-xs-6">
+                  <!-- Create latex here: https://www.codecogs.com/latex/eqneditor.php -->
+                  <img src="img/CodeCogsEqn.gif" class="img-fluid">
                 </div>
-              </div><br>
+              </div>
+              <br>
 
               In order to do the calculation, we needed to make sure that <span class="marker">each street</span> in
               the parking ticket dataset
