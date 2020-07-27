@@ -139,10 +139,10 @@
             I am able to do from sourcing data to deployment for productions and always try to optimize each process by
             using appropriate metrics, algorithms, and data structures.<br>
 
-            Actively <span class="marker">Looking for a fulltime job</span> as a machine learning engineer.
+            Actively <span class="marker">Looking for a fulltime job</span> as a machine learning engineer <span
+              class="marker">in the Vancouver area</span>.<br>
             I <span class="marker">already have a valid
-              work permit</span> in Canada for one year that
-            starts <span class="marker">from Aug 2020</span>.<br>
+              work permit</span> in Canada for one year.<br>
           </p>
         </blockquote>
         <p>
@@ -153,7 +153,7 @@
           <li><span class="marker">Programming Laguage</span>:</li>Python (TensorFlow, PyTroch, Pandas, Numpy,
           Matplotlib, OpenCV, Sklearn, Jupyter
           Notebook, Tensorforce, SCipy,
-          Flask, unittest), C/C++, SQL, Java, Bash
+          Flask, unittest),<br> C/C++, SQL, Java, Bash
           <li><span class="marker">Machine Learning</span>: </li>Computer Vision, NLP, Time Series, Reinforcement
           Learning,
           Classic machine learning
@@ -244,7 +244,7 @@
                     what everyone had done so far and what things each member was working on. From this experience, I
                     gained explanation skills that are concise and well structured.</p>
                   <hr>
-                  <h5>Technics</h5>
+                  <h5>Skills used</h5>
                   <p>
                   <ul>
                     <li><span class="marker">Python</span>: </li>TensorFlow, Numpy, Scipy, Matplotlib, Seaborn, Bokeh,
@@ -274,6 +274,96 @@
     <div class="w-100">
       <h2 class="mb-5">Projects</h2>
       <div class="row">
+        <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <div class=" card-body">
+              <div class="resume-date text-md-right">
+                <span class="text-primary">Jul 2020 - Jul 2020</span>
+              </div>
+              <h3 class="card-title">Twitter Real Time Financial Sentiment Analysis <a
+                  href="https://github.com/boblef/twitter_sentiment" target="_blank">&ensp;[github]</a></h3>
+              <p class="card-text">
+              <h5>About this project</h5>
+
+              A <span class="marker">Flask application</span> where we can enter hashtags and keywords related to tweets
+              we want to stream and in
+              which an NLP model, <span class="marker">FinBERT</span> which is a pre-trained NLP model to analyze the
+              <span class="marker">sentiment of the financial
+                text</span>, does sentiment analysis on the tweets in real-time. We can see the results of the tweets
+              collected containing the hashtags or keywords and their sentiment scores given by FinBERT via <span
+                class="marker">Pandas
+                dataFrame</span>.
+              <br><br>
+              <h5>FINBERT</h5>
+              It is built by further training the <span class="marker">BERT language model</span> in the finance domain,
+              using a large financial
+              corpus, Financial Phrase Bank from <a
+                href="https://www.researchgate.net/publication/251231107_Good_Debt_or_Bad_Debt_Detecting_Semantic_Orientations_in_Economic_Texts">Malo
+                et al. (2014)</a> which can be downloaded from <a
+                href="https://www.researchgate.net/profile/Pekka_Malo/publication/251231364_FinancialPhraseBank-v10/data/0c96051eee4fb1d56e000000/FinancialPhraseBank-v10.zip?origin=publication_list">here
+              </a>, and thereby fine-tuning it for financial sentiment classification. For the details, please see
+              <a href="https://arxiv.org/pdf/1908.10063.pdf">FinBERT: Financial Sentiment Analysis with Pre-trained
+                Language Models</a>.
+              <br>
+              <br>
+              <h5>Application outline</h5>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/twitter_sentiment/twitter_sentimental.png" class="img-fluid" alt="Responsive image" ,
+                  width="800" , height="600">
+              </p>
+              <br>
+              It starts by entering hashtags and keywords we want to stream on such as $TSLA, $GOOGL, #CAD, #USDJPY, and
+              so on.<br> Since we use the <span class="marker">FinBERT NLP model</span> to get sentiment scores so the
+              hashtags and keywords should
+              be something that may related to finance.<br>
+              The below image is taken after some keywords are given. Now, ready to start streaming by using <span
+                class="marker"><a href="http://docs.tweepy.org/en/latest/">Tweepy</a></span>, which is an API to deal
+              with twitter functionality in
+              Python.<br><br>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/twitter_sentiment/twitter_sentiment_top.png" class="img-fluid" alt="Responsive image" ,
+                  width="800" , height="600">
+              </p>
+              <br>
+              After streaming started, each tweet collected including at least one keyword we defined is preprocessed
+              with <span class="marker">NLTK</span> to be given a sentiment score by FinBERT</span>.
+              Once sentiment score is calculated we store information of each tweet into a csv file and display them in
+              a Pandas DataFrame, which we can see the below as an example.<br><br>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/twitter_sentiment/twitter_sentiment_result.png" class="img-fluid" alt="Responsive image" ,
+                  width="800" , height="600">
+              </p>
+              <br>
+              <br>
+              Yes, we can obviously use something like DynamoDB on AWS by using boto3 library to comminucate with in
+              order to store the data instead of a csv file locally.
+              <br>
+              <br>
+              <h5>Further work</h5>
+              <ul>
+                <li>Some of the functionality used in this application can also be used in the Automated Forex Trading
+                  Strategy which I have been working on in order to create new features.
+                </li>
+                <li>
+                  We change the Deep Learning model which gives sentiment scores to tweets to another NLP model which
+                  trained on different dataset, if we want to switch the domain we want to use for.
+                </li>
+              </ul>
+
+              <h5>Skills used</h5>
+              <ul>
+                <li><span class="marker">Python</span>:</li>PyTorch, NLTK, Tweepy, Flask, Pandas, Numpy
+                <li><span class="marker">Others</span>:</li> Github, Docker, CircleCI, HTML, CSS, JavaScript, jQuery,
+                Bootstrap
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- A Project section done-->
+
+        <p>&ensp;</p>
+
         <!-- A project section start -->
         <div class="col-sm-12 mb-2">
           <div class="card">
