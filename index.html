@@ -199,24 +199,27 @@
                   <hr>
                   <h5>About the company</h5>
                   <p><a href="https://www.linkedin.com/company/singular-software-inc-/about/" target="_blank">Singular
-                      Software</a> has created a phone-based app, <a href="https://heardthatapp.com/"
-                      target="_blank">HeardThat</a> launched at CES 2020, that
-                    substantially improves the utility
-                    of hearing aids
-                    and other hearing assistive devices in noisy social situations.<br>The company was nominated for
-                    the top 10 companies in <a href="https://www.newventuresbc.com/" target="_blank">New Ventures BC
-                      2019</a>.<br>
-                    I worked as a machine learning developer intern and involved in creating HeardThat app in the
-                    early
-                    developing stage.
+                      Software</a> is a company which has developed a phone-based hearing assistive app, <a
+                      href="https://heardthatapp.com/" target="_blank">HeardThat</a> which debuted at CES 2020, that
+                    helps people
+                    to hear speech in noisy situations by using the power of deep learning. The company was nominated at
+                    the top 10 out of about 200 in the <a href="https://www.newventuresbc.com/" target="_blank">New
+                      Ventures BC
+                      2019</a> and was also the winner of <a
+                      href="https://www.boomerventuresummit.com/innovation-challenge.html">2020 What's Next Innovation
+                      Challenge</a>.</p>
+                  I worked as a machine learning developer intern and involved in creating HeardThat app in the
+                  early
+                  developing stage.
                   </p>
                   <hr>
                   <h5>Responsibilities</h5>
-                  <p>When I joined the team, the first thing I did was that tried to catch up what they were trying to
-                    do and how to solve the problem and to understand the key part of the workflow such as preprocessing
-                    step, what comes into the models, and what comes out from the models. After gained solid
-                    understandings, I trained machine learning models and did evaluations of models that team members
-                    trained. </p>
+                  <p>Joined the team in the early development phase, and took initiative on the role of creating several
+                    platforms with <span class="marker">Flask</span> and Javascript for
+                    <span class="marker">model evaluation</span>, <span class="marker">constructing database with
+                      SQLite</span> where results of the evaluation were kept,
+                    <span class="amrker">implementing, and training machine
+                      learning models</span>. </p>
                   <p>- One of the things I developed for the purpose of the evaluation was an internal visualization
                     tool with Flask where team members can check the spectrogram and waveform of any audio files
                     interactively. Below gif is what I have found on twitter and is pretty similar to what I developed
@@ -235,14 +238,20 @@
                   </blockquote>
                   <br>
 
-                  <p>- Another thing I developed was an external platform which was for Mechanical Turk where we could
+                  <p>- Another thing I developed was an external platform which was for <span class="marker">Mechanical
+                      Turk</span> where we could
                     collect scores and transcription from people so that we were then able to calculate metrics such as
-                    Mean Opinion Score (MOS) and Word Error Rate (WER) that were part of metrics that we used to
+                    <span class="marker">Mean Opinion Score (MOS)</span> and <span class="marker">Word Error Rate
+                      (WER)</span> that were part of metrics that we used to
                     evaluate deep learning models.</p>
 
-                  <p>This internship was a remote work so we had a daily meeting on the call every day to catch up on
-                    what everyone had done so far and what things each member was working on. From this experience, I
-                    gained explanation skills that are concise and well structured.</p>
+                  <p>Worked with team members in an <span class="marker">agile</span> way by changing things as we
+                    needed and learned how <span class="marker">Scrum</span> works. Since the internship was
+                    remote, gained necessary skills such as <span class="marker">SSH</span> on <span
+                      class="marker">Ubuntu</span>, <span class="marker">good communication skills</span> with both
+                    verbal
+                    and written English with
+                    concise explanations, and <span class="marker">writing easy to understand documentation</span>.</p>
                   <hr>
                   <h5>Skills used</h5>
                   <p>
@@ -377,19 +386,23 @@
                 <hr>
               <h5>About the Sudoku solver</h5>
 
-              This is a Flask app in which it detects Sudoku puzzles that we show to the webcam by using OpenCV and a
-              CNN model which is for recognizing each digit.<br> Once it detected a puzzle, then we formulate a
-              Quadratic
-              Binary Model (QBM) and an objective function that we want to minimize in order to find the solution by
+              This is a <span class="marker">Flask</span> app in which it detects Sudoku puzzles that we show to the
+              webcam by using <span class="marker">OpenCV</span> and a
+              <span class="marker">CNN</span> model which is for recognizing each digit.<br> Once it detected a puzzle,
+              then we formulate a
+              <span class="marker">Quadratic
+                Binary Model (QBM)</span> and an objective function that we want to minimize in order to find the
+              solution by
               using D-Wave's quantum computers.<br>
               <br>
               The purpose of this project:
               <ul>
-                <li>Learn the annealing way quantum computers which are good at solving particular problems such as
+                <li>Learn <span class="marker">the annealing way quantum computers</span> which are good at solving
+                  particular problems such as
                   optimization problems.</li>
-                <li>Get hands dirty with OpenCV.</li>
-                <li>Learn testing and how to use CI tools such as CircleCI.</li>
-                <li>Learn how to use Docker.</li>
+                <li>Get hands dirty with <span class="marker">OpenCV</span>.</li>
+                <li>Learn testing and how to use CI tools such as <span class="marker">CircleCI</span>.</li>
+                <li>Learn how to use <span class="marker">Docker</span>.</li>
               </ul>
               <hr>
               <h5>Preprocessing steps</h5>
@@ -445,7 +458,8 @@
                 </table>
               </div>
 
-              <i><strong>The samples of digits cropped and fed into a CNN model.</strong></i><br>
+              <i><strong>The samples of digits cropped and fed into a <span class="marker">CNN</span>
+                  model.</strong></i><br>
               <div class="table-responsive">
                 <table width="100%" cellpadding="10">
                   <tr>
@@ -484,18 +498,20 @@
                 </table>
               </div>
               <br>
-              <p>Then we create a 2D Numpy array which represents the sudoku puzzle that the user showed and which is
-                created based on recognition of a CNN model, which is trained on <a
+              <p>Then we create a 2D <span class="marker">Numpy</span> array which represents the sudoku puzzle that the
+                user showed and which is
+                created based on recognition of a <span class="marker">CNN</span> model, which is trained on <a
                   href="https://computervisiononline.com/dataset/1105138682">Chars74K</a>, for each cell in the grid.
               </p>
               <br>
-              <p>The last thing the user has to do is that fix the numbers that are misclassified by the CNN model by
-                filling the corresponding text box with a correct one.</p>
+              <p>The last thing the user has to do is that fix the numbers that are misclassified by the <span
+                  class="marker">CNN model by
+                  filling the corresponding text box with a correct one.</p>
               <div class="column">
                 <img src="img/sudoku/captured_puzzle.png" class="img-fluid" alt="Responsive image">
               </div>
               <hr>
-              <h5>Formulate our problem for D-Wave's quantum computers.</h5>
+              <h5>Formulate our problem for <span class="marker">D-Wave's quantum computers</span>.</h5>
               <ul>
                 <li>We need to formulate problems we want to solve as a <span class="marker">Binary Quadratic Model
                     (BQM)</span>.</li>
