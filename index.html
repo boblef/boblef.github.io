@@ -34,6 +34,7 @@
     .marker {
       font-style: italic;
       font-weight: bold;
+      color: #02366e;
     }
 
     .isDisabled {
@@ -125,7 +126,7 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0"><span class="text-primary">Kohei</span> Suzuki
+        <h1 class="mb-0"><span class="marker">Kohei Suzuki</span>
         </h1>
         <div class="subheading mb-5">email address:
           <a href="mailto:koheisuzuki808@gmail.com">koheisuzuki808@gmail.com</a>&emsp;|&emsp;
@@ -154,9 +155,8 @@
           Matplotlib, OpenCV, Sklearn, Jupyter
           Notebook, Tensorforce, SCipy,
           Flask, unittest),<br> C/C++, SQL, Java, Bash
-          <li><span class="marker">Machine Learning</span>: </li>Computer Vision, NLP, Time Series, Reinforcement
-          Learning,
-          Classic machine learning
+          <li><span class="marker">Machine Learning</span>: </li>Computer Vision, NLP, Signal Processing, Time Series,
+          Reinforcement Learning, Classic machine learning
           <li><span class="marker">OS</span>: </li>Ubuntu, MacOS
           <li><span class="marker">Others</span>: </li>AWS(EC2, DynamoDB, CloudWatch), Github, Docker, CircleCI, Scrum,
           Agile, Algorithms and Data structures, Quantum computing (Dwave-Ocean-SDK)
@@ -169,8 +169,8 @@
           <a href="https://github.com/boblef" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.instagram.com/boblef_van/?hl=en" target="_blank">
-            <i class="fab fa-instagram"></i>
+          <a href="https://hub.docker.com/u/boblef" target="_blank">
+            <i class="fab fa-docker"></i>
           </a>
         </div>
       </div>
@@ -288,10 +288,96 @@
           <div class="card">
             <div class=" card-body">
               <div class="resume-date text-md-right">
+                <span class="text-primary">Jul 2020 - Aug 2020</span>
+              </div>
+              <h3 class="card-title">Speech-To-Text app with Flask<a href="https://github.com/boblef/auto_transcript"
+                  target="_blank">&ensp;[github]</a></h3>
+              <a href="https://app.circleci.com/pipelines/github/boblef/auto_transcript"><img
+                  src="https://circleci.com/gh/boblef/auto_transcript.svg?style=svg"></a>
+              <p class="card-text">
+              <h5>About this project</h5>
+
+              A <span class="marker">Speech-To-Text</span> app with Flask in which we can upload a video or an audio
+              file and can get transcripts of the speech in the file we upload.
+              <br><br>
+              <h5>How it works</h5>
+              Once we upload a video file, it takes the audio from the video with the information of the file such as
+              the sampling rate by using <span class="marker"><a href="https://kkroening.github.io/ffmpeg-python/"
+                  target="_blank">ffmpeg-python</a></span>, which is a wrapper of <span class="marker"><a
+                  href="https://ffmpeg.org/ffmpeg.html" target="_blank">ffmpeg</a></span>. Based on the information,
+              it converts the audio to a <span class="marker">1-D Numpy array</span> which is fed into the DeepSpeech
+              model which trained by machine learning techniques based on <span class="marker"><a
+                  href="https://arxiv.org/abs/1412.5567" target="_blank">Baidu's Deep Speech research paper</a></span>.
+              The output from the DeepSpeech model is then fed into a <span class="marker">language model</span> in
+              order to improve the prediction accuracy.
+              <br>
+              <br>
+              <h5>Application outline</h5>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/stt/speech-to-text.png" class="img-fluid" alt="Responsive image" , width="800" ,
+                  height="600">
+              </p>
+              <br>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/stt/top.png" class="img-fluid" alt="Responsive image" , width="800" , height="600">
+              </p>
+              <br>
+              After a video or an audio file is uploaded, it collects information about the file such as sampling
+              rate, and takes audio from the video if the file is a video by using <span
+                class="marker">ffmpeg-python</span>. The DeepSpeech model desires 16,000 Hz for
+              sampling rate so we need to resample the audio to satisfy that if needed. Then it converts the audio to
+              <span class="marker">1-D Numpy array</span> which is fed into the DeepSpeech model.<br><br>
+              <p class="mb-0 mt-0 font-italic" align="center">
+                <img src="img/stt/result.png" class="img-fluid" alt="Responsive image" , width="800" , height="600">
+              </p>
+              <br>
+              <br>
+              The output from the DeepSpeech model is then fed into a <span class="marker">language model</span> to
+              improve the prediction accuracy.<br>
+              Once it gets the output from the language model, it creates a JSON that includes a list of words with
+              start-time and duration. Based on the JSON file, it also creates a text file that keeps a sentence of
+              words concatenated with white space.
+              A zip file that contains the JSON file and the text file is <span class="marker">downloadable</span>.
+              <br>
+              <br>
+              <h5>Further work</h5>
+              <ul>
+                <li>
+                  Improve UI.
+                </li>
+                <li>
+                  Add another feature that detects specific motions of the user and put marks on the sequence of
+                  frames so that the user will be able to find easily where they want to cut.
+                </li>
+                <li>
+                  Deploy as a C++ software since I want to create a software with C++.
+                </li>
+              </ul>
+
+              <h5>Skills used</h5>
+              <ul>
+                <li><span class="marker">Python</span>:</li>TensorFlow, Numpy, ffmpeg-python, Flask
+                <li><span class="marker">Others</span>:</li> Github, Docker, CircleCI, HTML, CSS
+                Bootstrap
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- A Project section done-->
+
+        <p>&ensp;</p>
+
+        <!-- A project section start -->
+        <div class="col-sm-12 mb-2">
+          <div class="card">
+            <div class=" card-body">
+              <div class="resume-date text-md-right">
                 <span class="text-primary">Jul 2020 - Jul 2020</span>
               </div>
               <h3 class="card-title">Twitter Real Time Financial Sentiment Analysis <a
                   href="https://github.com/boblef/twitter_sentiment" target="_blank">&ensp;[github]</a></h3>
+              <a href="https://app.circleci.com/pipelines/github/boblef/twitter_sentiment"><img
+                  src="https://circleci.com/gh/boblef/twitter_sentiment.svg?style=svg"></a>
               <p class="card-text">
               <h5>About this project</h5>
 
@@ -382,6 +468,8 @@
               </div>
               <h3 class="card-title">Sudoku Solver on Quantum Computers<a href="https://github.com/boblef/sudoku_solver"
                   target="_blank">&ensp;[github]</a></h3>
+              <a href="https://app.circleci.com/pipelines/github/boblef/sudoku_solver"><img
+                  src="https://circleci.com/gh/boblef/sudoku_solver.svg?style=svg"></a>
               <p class="card-text">
                 <hr>
               <h5>About the Sudoku solver</h5>
@@ -869,92 +957,6 @@
           </div>
         </div>
         <!-- A project section done -->
-
-        <p>&ensp;</p>
-
-        <!-- A project section start -->
-        <div class="col-sm-12 mb-2">
-          <div class="card">
-            <div class=" card-body">
-              <div class="resume-date text-md-right">
-                <span class="text-primary">Mar 2020 - Mar 2020</span>
-              </div>
-              <h3 class="card-title">Detecting COVID-19 with CNN<a href="https://github.com/boblef/detect_COVID19"
-                  target="_blank">&ensp;[github]</a></h3>
-              <p class="card-text">
-              <h5>Disclaimer</h5>
-
-              COVID-19 detection is only for educational purposes that don't mean highly accurate COVID-19 diagnosis
-              system.
-              <br><br>
-              <h5>Dataset</h5>
-
-              Positive samples come from <a href="https://github.com/ieee8023/covid-chestxray-dataset">this
-                repo</a>.
-              And I used <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images
-                (Pneumonia) dataset</a> for the samples of negative COVID-19.<br>
-              <span class="marker">Each image was reshaped to (224, 224)</span> before being fed into the model
-              whose archtecture is discussed
-              down below.<br><br>
-
-              <strong>Train</strong>
-
-              - Positives: 67 images
-              - Negatives: 67 images
-
-              20% of training samples were used for the validation set.<br>
-              <strong>Test</strong>
-
-              - Positives: 6 images
-              - Negatives: 6 images
-              <br>
-              <br>
-              <div class="column">
-                <i><strong>Positive samples</strong></i>
-                <img src="img/positive_samples.png" class="img-fluid" alt="Responsive image">
-                <i><strong>Negative samples</strong></i>
-                <img src="img/negative_samples.png" class="img-fluid" alt="Responsive image">
-              </div>
-              <br>
-
-              <div class="column">
-
-              </div>
-
-              <p>As we can see here, the resolution and quality of images of each category are a bit different, but
-                I just ignore that for the educational purpose. </p>
-
-              <br>
-              <h5>Model</h5>
-
-              I grabbed <span class="marker">VGG16</span> and added some layers, Avg_Pool2D, 2 Dense layers, and
-              Dropout
-              between the dense
-              layers.
-              Then trained only layers added.<br>
-
-              <strong>Added layers</strong>
-              <div class="column">
-                <img src="img/additional_layers.png" class="img-fluid" alt="Responsive image">
-              </div>
-
-              <h5>Result</h5>
-              As we can see here, it is <span class="marker">underfitting</span> on training data but the results on
-              test data I got were 1.0
-              for Recall, Precision, and F1 score.
-
-              <span class="marker">I can definitely say that the number of samples for test data is not enough,
-                however, I could get a
-                good result even small samples of training data with finetuning</span>.
-              <div class="column">
-                <img src="img/acc_result.png" class="img-fluid" alt="Responsive image">
-                <img src="img/loss_result.png" class="img-fluid" alt="Responsive image">
-              </div>
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- A Project section done-->
 
         <p>&ensp;</p>
 
