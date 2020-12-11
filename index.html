@@ -309,7 +309,7 @@
               <div class="row">
                 <div class="column">
                   <img src="img/DeepColors/devices_logo.png" class="img-fluid" alt="Responsive image" , width="400" ,
-                    height="300">
+                    height="400">
                 </div>
                 <div class="column">
                   <img src="img/DeepColors/Appstore_ScreenShot_12.9_EN.001.jpeg" class="img-fluid"
@@ -323,28 +323,45 @@
               <br><br>
               <h5>Demos</h5>
               - Colorize sketches
-              <div class="row">
-                <div class="column">
-                  <img src="img/DeepColors/demoSketchConcat.png" class="img-fluid" alt="Responsive image" , width="400"
-                    , height="300">
+              <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                      <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <img src="img/DeepColors/demoSketchConcat.png" class="img-fluid" alt="Responsive image" ,
+                          width="400" , height="300">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="column">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/I0_DtOK7t_A" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="col-xl-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/I0_DtOK7t_A"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
               <hr>
               - Colorize grayscale photos
-              <div class="row">
-                <div class="column">
-                  <img src="img/DeepColors/demoPhotoConcat.png" class="img-fluid" alt="Responsive image" , width="400" ,
-                    height="300">
+              <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                      <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <img src="img/DeepColors/demoPhotoConcat.png" class="img-fluid" alt="Responsive image" ,
+                          width="400" , height="300">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="column">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/7Hi5IVlXDyo" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="col-xl-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7Hi5IVlXDyo" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
               <br>
@@ -367,7 +384,8 @@
                 <hr>
                 <li>Monetisation</li>
                 Set up Admob and created mediation groups to maximize the revenues.
-                Prepared in-app purchases as well. Currently, there is only one item that users can buy but I have been
+                Prepared in-app purchases as well. Currently, there is only one item that users can buy but I have
+                been
                 working on some new features.
               </ul>
               <br>
@@ -402,7 +420,8 @@
                   href="https://ffmpeg.org/ffmpeg.html" target="_blank">ffmpeg</a></span>. Based on the information,
               it converts the audio to a <span class="marker">1-D Numpy array</span> which is fed into the DeepSpeech
               model which trained by machine learning techniques based on <span class="marker"><a
-                  href="https://arxiv.org/abs/1412.5567" target="_blank">Baidu's Deep Speech research paper</a></span>.
+                  href="https://arxiv.org/abs/1412.5567" target="_blank">Baidu's Deep Speech research
+                  paper</a></span>.
               The output from the DeepSpeech model is then fed into a <span class="marker">language model</span> in
               order to improve the prediction accuracy.
               <br>
@@ -476,7 +495,8 @@
               <p class="card-text">
               <h5>About this project</h5>
 
-              A <span class="marker">Flask application</span> where we can enter hashtags and keywords related to tweets
+              A <span class="marker">Flask application</span> where we can enter hashtags and keywords related to
+              tweets
               we want to stream and in
               which an NLP model, <span class="marker">FinBERT</span> which is a pre-trained NLP model to analyze the
               <span class="marker">sentiment of the financial
@@ -486,7 +506,8 @@
                 dataFrame</span>.
               <br><br>
               <h5>FINBERT</h5>
-              It is built by further training the <span class="marker">BERT language model</span> in the finance domain,
+              It is built by further training the <span class="marker">BERT language model</span> in the finance
+              domain,
               using a large financial
               corpus, Financial Phrase Bank from <a
                 href="https://www.researchgate.net/publication/251231107_Good_Debt_or_Bad_Debt_Detecting_Semantic_Orientations_in_Economic_Texts">Malo
@@ -503,7 +524,8 @@
                   width="800" , height="600">
               </p>
               <br>
-              It starts by entering hashtags and keywords we want to stream on such as $TSLA, $GOOGL, #CAD, #USDJPY, and
+              It starts by entering hashtags and keywords we want to stream on such as $TSLA, $GOOGL, #CAD, #USDJPY,
+              and
               so on.<br> Since we use the <span class="marker">FinBERT NLP model</span> to get sentiment scores so the
               hashtags and keywords should
               be something that may related to finance.<br>
@@ -518,7 +540,8 @@
               <br>
               After streaming started, each tweet collected including at least one keyword we defined is preprocessed
               with <span class="marker">NLTK</span> to be given a sentiment score by FinBERT</span>.
-              Once sentiment score is calculated we store information of each tweet into a csv file and display them in
+              Once sentiment score is calculated we store information of each tweet into a csv file and display them
+              in
               a Pandas DataFrame, which we can see the below as an example.<br><br>
               <p class="mb-0 mt-0 font-italic" align="center">
                 <img src="img/twitter_sentiment/twitter_sentiment_result.png" class="img-fluid" alt="Responsive image" ,
@@ -571,7 +594,8 @@
 
               This is a <span class="marker">Flask</span> app in which it detects Sudoku puzzles that we show to the
               webcam by using <span class="marker">OpenCV</span> and a
-              <span class="marker">CNN</span> model which is for recognizing each digit.<br> Once it detected a puzzle,
+              <span class="marker">CNN</span> model which is for recognizing each digit.<br> Once it detected a
+              puzzle,
               then we formulate a
               <span class="marker">Quadratic
                 Binary Model (QBM)</span> and an objective function that we want to minimize in order to find the
@@ -591,7 +615,8 @@
               <h5>Preprocessing steps</h5>
 
               Here, the workflow from capturing a sudoku puzzle to findind a solution will be descrived.<br>
-              I will go with images from left to right and top to bottom so you will can easily imagine what is going on
+              I will go with images from left to right and top to bottom so you will can easily imagine what is going
+              on
               the inside.<br><br>
 
               <div class="table-responsive">
@@ -681,7 +706,8 @@
                 </table>
               </div>
               <br>
-              <p>Then we create a 2D <span class="marker">Numpy</span> array which represents the sudoku puzzle that the
+              <p>Then we create a 2D <span class="marker">Numpy</span> array which represents the sudoku puzzle that
+                the
                 user showed and which is
                 created based on recognition of a <span class="marker">CNN</span> model, which is trained on <a
                   href="https://computervisiononline.com/dataset/1105138682">Chars74K</a>, for each cell in the grid.
@@ -709,7 +735,8 @@
               </ul><br>
               <h5>BQM Development Process</h5>
               <ul>
-                <li>Convert our objective and constraints to math statements with binary variables if we picked QUBO as
+                <li>Convert our objective and constraints to math statements with binary variables if we picked QUBO
+                  as
                   an objective function or -1/+1 variables if Ising.</li>
                 <li>Make our objective and constraints "QUBO appropreate".
                   <ul>
@@ -756,7 +783,8 @@
                     href="https://www.codecogs.com/eqnedit.php?latex=\sum&space;\sum&space;b_{i,&space;j}v_{i}v_{j}"
                     target="_blank"><img
                       src="https://latex.codecogs.com/gif.latex?\sum&space;\sum&space;b_{i,&space;j}v_{i}v_{j}"
-                      title="\sum \sum b_{i, j}v_{i}v_{j}" /></a>, contains <span class="marker">quadratic</span> terms,
+                      title="\sum \sum b_{i, j}v_{i}v_{j}" /></a>, contains <span class="marker">quadratic</span>
+                  terms,
                   with each term
                   in the summation containing
                   a product of two variables.</li>
@@ -773,12 +801,16 @@
               <hr>
               <h5>Note</h5>
               <ul>
-                <li>Though we use the D-Wave quantum computers to solve Sudoku puzzles which has a fascinating speed for
-                  the computation, many people access the computers so that we have to wait for a queue for using them.
+                <li>Though we use the D-Wave quantum computers to solve Sudoku puzzles which has a fascinating speed
+                  for
+                  the computation, many people access the computers so that we have to wait for a queue for using
+                  them.
                   So
                   the total process will take time but usually, it is done within a minute.</li>
-                <li>Sometimes the quantum computers can not find the solution for the given Sudoku puzzle especially for
-                  difficult ones since quantum computers run the calculation several times and pick up the best solution
+                <li>Sometimes the quantum computers can not find the solution for the given Sudoku puzzle especially
+                  for
+                  difficult ones since quantum computers run the calculation several times and pick up the best
+                  solution
                   they found. In other words, it did not converge to an optimum of the objective function.</li>
               </ul>
             </div>
@@ -806,7 +838,8 @@
 
               About this project can be separated into two sections, MVP and version 2.0.<br>
               <ul>
-                <li><span class="marker">In MVP section</span>: </li>I will introduce you what I had done and the result
+                <li><span class="marker">In MVP section</span>: </li>I will introduce you what I had done and the
+                result
                 I got from the first deep reinforcement learning model.
                 <li><span class="marker">In version 2.0 section</span>: </li>I will mention what I changed, especially
                 preprocessing in order to make a better model and will show you improved results.
@@ -830,7 +863,8 @@
                 Reinforcement Learning for Foreign Exchange Trading.</p>
               In this paper, what they tried was that tried to optimize SureFireStrategy which is a variant of the
               Martingale by using ConvNet as the agent in reinforcement learning in order to find patters in heatmap
-              images encoded from time series data by Gramian Angular Field (GAF) which I will talk about later.<br><br>
+              images encoded from time series data by Gramian Angular Field (GAF) which I will talk about
+              later.<br><br>
               </p>
               <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                 <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i>
@@ -895,7 +929,8 @@
               <br>
               <h5>3. Data</h5>
               How I got forex data was that I used a <a
-                href="https://oanda-api-v20.readthedocs.io/en/latest/installation.html">python API</a> provided by OANDA
+                href="https://oanda-api-v20.readthedocs.io/en/latest/installation.html">python API</a> provided by
+              OANDA
               which is a broker that I use. I was able to gather data in any major timeframe I wanted.<br><br>
               <h5>4. Result</h5>
               The below image is a result plot of training.
@@ -910,7 +945,8 @@
               <img src="img/result_ep0_ep900_20200219.png" class="img-fluid" alt="Responsive image">
               <h5>5. Deployment</h5>
               Though I had not got any model that might be able to make a profit on the real market, I deployed the
-              model on AWS EC2 and made all the process needed automated by defining operations in a bash script. I also
+              model on AWS EC2 and made all the process needed automated by defining operations in a bash script. I
+              also
               set up CloudWatch to turn on and off the server not to waste money on weekends when the forex market
               close.
               <hr>
@@ -929,12 +965,15 @@
               exit the market instead of using the SureFireStrategy.<br><br>
               <h5>2. Definition of the state</h5>
               In MVP, I used encoded heatmap images as a state but this might cause the result that the model had not
-              been trained well, meaning that ConvNet could not find any patters in the images. So I switched the way to
+              been trained well, meaning that ConvNet could not find any patters in the images. So I switched the way
+              to
               define the state to use technical indicators as features that describe the state.<br><br>
               <h5>3. Data</h5>
               In MVP, I used data that OANDA provides, but the data actually had a considerable amount of nans that I
-              filled up. And the paper I followed did training on data that had timeframe instead of using bid-ask price
-              so that I could not perfectly reproduce the actual price movement that is happening in the real market. So
+              filled up. And the paper I followed did training on data that had timeframe instead of using bid-ask
+              price
+              so that I could not perfectly reproduce the actual price movement that is happening in the real market.
+              So
               I started collecting bid-ask data in real-time that is used to train models in version 2.0.
               <div class="row">
                 <div class="column">
@@ -1036,9 +1075,12 @@
               <br>
               <h5>Further work</h5>
               <ol>
-                <li><span class="marker">Solve overfitting</span>: </li>As we can see the entry points plots above, the
-                amount of entry points for short is much more than it is for long. This is becaouse of the training data
-                I used has several downtrends that could cause overfitting problem. We can solve this by increasing the
+                <li><span class="marker">Solve overfitting</span>: </li>As we can see the entry points plots above,
+                the
+                amount of entry points for short is much more than it is for long. This is becaouse of the training
+                data
+                I used has several downtrends that could cause overfitting problem. We can solve this by increasing
+                the
                 amount of training data, especially data that has uptrends.
                 <li>Use heatmap images as extra features.</li>
                 <li>Use Fourier transform to approximate the price movement and calculate derivatives that are used as
